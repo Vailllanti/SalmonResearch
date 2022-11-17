@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SalmonStatistics.Model.DTOs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -19,5 +20,17 @@ namespace SalmonStatistics.Model.ViewModel
 
 		[Required(ErrorMessage = "流域名稱必填")]
 		public string RiverName { get; set; }
+	}
+
+	public static class WatershedVMExts 
+	{
+		public static WatershedDTO ToDTO(this WatershedVM vm)
+		{
+			return new WatershedDTO
+			{
+				Id = vm.Id,
+				RiverName = vm.RiverName,
+			};
+		}
 	}
 }

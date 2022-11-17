@@ -89,6 +89,9 @@
     <Compile Include="EditWatershedForm.Designer.cs">
       <DependentUpon>EditWatershedForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Infra\DAOs\SampleAreaDAO.cs" />
+    <Compile Include="Infra\DAOs\SpeciesDAO.cs" />
+    <Compile Include="Infra\DAOs\WatershedDAO.cs" />
     <Compile Include="Infra\Extenstions\ValidationHelper.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -96,6 +99,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\DTOs\SampleAreaDTO.cs" />
+    <Compile Include="Model\DTOs\SpeciesDTO.cs" />
+    <Compile Include="Model\DTOs\WatershedDTO.cs" />
     <Compile Include="Model\Services\SampleAreaService.cs" />
     <Compile Include="Model\Services\SpeciesService.cs" />
     <Compile Include="Model\Services\WatershedService.cs" />

@@ -1,4 +1,6 @@
-﻿using SalmonStatistics.Infra.Extenstions;
+﻿using SalmonStatistics.Infra.DAOs;
+using SalmonStatistics.Infra.Extenstions;
+using SalmonStatistics.Model.DTOs;
 using SalmonStatistics.Model.Services;
 using SalmonStatistics.Model.ViewModel;
 using System;
@@ -24,7 +26,7 @@ namespace SalmonStatistics
 		{
 			WatershedIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
-			List<WatershedIndexVM> watershed = new WatershedService()
+			var watershed = new WatershedDAO()
 				.GetAll()/*.Prepend(new WatershedIndexVM { Id = 0, RiverName = String.Empty })*/.ToList();
 			this.WatershedIdComboBox.DataSource = watershed;
 		}
@@ -47,9 +49,12 @@ namespace SalmonStatistics
 
 			bool isValid = ValidationHelper.Vaildate(model, map, errorProvider1);
 			if (!isValid) return;
+
+			SampleAreaDTO dTO = model.ToDTO(); 
+
 			try
 			{
-				new SampleAreaService().Create(model);
+				new SampleAreaService().Create(dTO);
 				this.DialogResult = DialogResult.OK;
 			}
 			catch (Exception ex)

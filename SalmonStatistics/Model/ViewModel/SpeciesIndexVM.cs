@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SalmonStatistics.Model.DTOs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -25,4 +26,18 @@ namespace SalmonStatistics.Model.ViewModel
 		//[Required]
 		public string Url { get; set; }
 	}
+
+	public static class SpeciesVMExts 
+	{
+		public static SpeciesDTO ToDTO(this SpeciesVM vm)
+		{
+			return new SpeciesDTO
+			{
+				Id = vm.Id,
+				Species = vm.Species,
+				Url = vm.Url,
+			};
+		}
+	}
 }
+

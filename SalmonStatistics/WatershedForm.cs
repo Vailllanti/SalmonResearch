@@ -1,4 +1,6 @@
-﻿using SalmonStatistics.Model.Services;
+﻿using SalmonStatistics.Infra.DAOs;
+using SalmonStatistics.Model.DTOs;
+using SalmonStatistics.Model.Services;
 using SalmonStatistics.Model.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -23,7 +25,7 @@ namespace SalmonStatistics
 
 		private void DisplayWatershed()
 		{
-			watershed = new WatershedService().GetAll().ToArray();
+			watershed = new WatershedDAO().GetAll().Select(dto => dto.ToindexVM()).ToArray();
 			BindData(watershed);
 		}
 		private void BindData(WatershedIndexVM[] model)

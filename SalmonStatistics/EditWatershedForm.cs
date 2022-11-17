@@ -1,5 +1,7 @@
 ﻿using ISpan.Utility;
+using SalmonStatistics.Infra.DAOs;
 using SalmonStatistics.Infra.Extenstions;
+using SalmonStatistics.Model.DTOs;
 using SalmonStatistics.Model.Services;
 using SalmonStatistics.Model.ViewModel;
 using System;
@@ -42,15 +44,11 @@ namespace SalmonStatistics
 			//	return;
 			//}
 			//WatershedVM model = ToWatershedVM(dt.Rows[0]);
-			try
-			{
-				var model = new WatershedService().GetOne(id);
-				riverTextBox.Text = model.RiverName;
-			}
-			catch(Exception ex)
-			{
-				MessageBox.Show(ex.Message);
-			}
+			WatershedDTO dTO = new WatershedDAO().GetOne(id);
+
+			WatershedVM model = dTO.ToVM();
+
+			riverTextBox.Text = model.RiverName;
 
 		}
 		//private WatershedVM ToWatershedVM(DataRow row)
@@ -79,9 +77,11 @@ namespace SalmonStatistics
 
 			bool isValid = ValidationHelper.Vaildate(model, map, errorProvider1);
 			if (!isValid) return;
+
+			WatershedDTO dTO = model.ToDTO();
 			try
 			{
-				new WatershedService().Update(model);
+				new WatershedService().Update(dTO);
 				this.DialogResult = DialogResult.OK;
 			}
 			catch (Exception ex)

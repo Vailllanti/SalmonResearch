@@ -1,4 +1,6 @@
 ﻿using ISpan.Utility;
+using SalmonStatistics.Infra.DAOs;
+using SalmonStatistics.Model.DTOs;
 using SalmonStatistics.Model.Services;
 using SalmonStatistics.Model.ViewModel;
 using System;
@@ -26,15 +28,16 @@ namespace SalmonStatistics
 		{ 
 			watershedComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
-			List<WatershedIndexVM> watershed = new WatershedService()
-				.GetAll().Prepend(new WatershedIndexVM { Id = 0, RiverName = String.Empty }).ToList();
+			var watershed = new WatershedDAO()
+				.GetAll().Prepend(new WatershedDTO { Id = 0, RiverName = String.Empty }).ToList();
 			this.watershedComboBox.DataSource = watershed;
 		}
 	
 
 		private void DisplaySampleArea()
 		{
-			sampleArea = new SampleAreaService().GetAll(((WatershedIndexVM)watershedComboBox.SelectedItem).Id).ToArray();
+			sampleArea = new SampleAreaDAO().GetAll(((WatershedIndexVM)watershedComboBox.SelectedItem).Id)
+						.Select(dto=>dto.ToIndexVM()).ToArray();
 			BindData(sampleArea);
 		}
 		private void BindData(SampleAreaIndexVM[] model)

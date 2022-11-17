@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SalmonStatistics.Model.DTOs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -26,5 +27,18 @@ namespace SalmonStatistics.Model.ViewModel
 
 		[Required(ErrorMessage = "流域必選")]
 		public int WatershedId { get; set; }
+	}
+
+	public static class SampleAreaVMExts
+	{
+		public static SampleAreaDTO ToDTO(this SampleAreaVM vm)
+		{
+			return new SampleAreaDTO
+			{
+				Id = vm.Id,
+				AreaName = vm.AreaName,
+				WatershedId=vm.WatershedId,
+			};
+		}
 	}
 }

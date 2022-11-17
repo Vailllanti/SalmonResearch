@@ -1,5 +1,7 @@
 ﻿using ISpan.Utility;
+using SalmonStatistics.Infra.DAOs;
 using SalmonStatistics.Infra.Extenstions;
+using SalmonStatistics.Model.DTOs;
 using SalmonStatistics.Model.Services;
 using SalmonStatistics.Model.ViewModel;
 using System;
@@ -33,52 +35,51 @@ namespace SalmonStatistics
 
 		private void BindData(int id)
 		{
-			try
-			{
-			var model = new SampleAreaService().GetOne(id);
+			
+			SampleAreaDTO dto = new SampleAreaDAO().GetOne(id);
+
+			SampleAreaVM model = dto.ToVM();
+
 			WatershedIdComboBox.SelectedItem = ((List<WatershedVM>)WatershedIdComboBox.DataSource)
 													.FirstOrDefault(x => x.Id == model.WatershedId);
 			areaNameTextBox.Text = model.AreaName;
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message);
-			}
-
 		}
+
 		private void InitForm()
 		{
 			WatershedIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
-			var sql = "select * from Watershed order by Id";
-			var dpHelper = new SqlDbHelper("default");
+			//var sql = "select * from Watershed order by Id";
+			//var dpHelper = new SqlDbHelper("default");
 
-			List<WatershedVM> Watershed = dpHelper.Select(sql, null)
-								.AsEnumerable()
-								.Select(row => ToWatershedVM(row))
-								.ToList();
+			//List<WatershedVM> Watershed = dpHelper.Select(sql, null)
+			//					.AsEnumerable()
+			//					.Select(row => ToWatershedVM(row))
+			//					.ToList();
+			var Watershed = new WatershedDAO().GetAll().ToList();
 
 			this.WatershedIdComboBox.DataSource = Watershed;
 		}
-		private WatershedVM ToWatershedVM(DataRow row)
-		{
-			return new WatershedVM
-			{
-				Id = row.Field<int>("Id"),
-				RiverName = row.Field<string>("RiverName"),
-			};
-		}
+		//private WatershedVM ToWatershedVM(DataRow row)
+		//{
+		//	return new WatershedVM
+		//	{
+		//		Id = row.Field<int>("Id"),
+		//		RiverName = row.Field<string>("RiverName"),
+		//	};
+		//}
 
 		private void deleteButton_Click(object sender, EventArgs e)
 		{
 			if (MessageBox.Show("確定刪除?", "刪除紀錄",MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
 
-			string sql = @"DELETE FROM SampleArea WHERE Id=@Id";
-			var parameters = new SqlParameterBulider()
-							.AddInt("Id", this.id)
-							.Build();
+			new SampleAreaService().Delete(id);
+			//string sql = @"DELETE FROM SampleArea WHERE Id=@Id";
+			//var parameters = new SqlParameterBulider()
+			//				.AddInt("Id", this.id)
+			//				.Build();
 
-			new SqlDbHelper("default").ExecuteNonQuery(sql, parameters);
+			//new SqlDbHelper("default").ExecuteNonQuery(sql, parameters);
 			this.DialogResult = DialogResult.OK;
 		}
 
@@ -101,10 +102,11 @@ namespace SalmonStatistics
 
 			bool isValid = ValidationHelper.Vaildate(model, map, errorProvider1);
 			if (!isValid) return;
+			SampleAreaDTO dTO = model.ToDTO();
 
 			try
 			{
-				new SampleAreaService().Update(model);
+				new SampleAreaService().Update(dTO);
 				this.DialogResult = DialogResult.OK;
 			}
 			catch (Exception ex)

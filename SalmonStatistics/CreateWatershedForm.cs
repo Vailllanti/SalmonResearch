@@ -1,4 +1,5 @@
 ﻿using SalmonStatistics.Infra.Extenstions;
+using SalmonStatistics.Model.DTOs;
 using SalmonStatistics.Model.Services;
 using SalmonStatistics.Model.ViewModel;
 using System;
@@ -36,9 +37,11 @@ namespace SalmonStatistics
 
 			bool isValid = ValidationHelper.Vaildate(model, map, errorProvider1);
 			if (!isValid) return;
+
+			WatershedDTO dTO = model.ToDTO();
 			try
 			{
-				new WatershedService().Create(model);
+				new WatershedService().Create(dTO);
 				this.DialogResult = DialogResult.OK;
 			}
 			catch(Exception ex)
