@@ -34,9 +34,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ISpan.Utility">
-      <HintPath>..\..\Vailllanti\1110ADO.NET\ISpan.Utility\bin\Debug\ISpan.Utility.dll</HintPath>
+      <HintPath>..\..\..\1110ADO.NET\ISpan.Utility\bin\Debug\ISpan.Utility.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,11 +53,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateSampleAreaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateSampleAreaForm.Designer.cs">
+      <DependentUpon>CreateSampleAreaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateSpeciesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateSpeciesForm.Designer.cs">
+      <DependentUpon>CreateSpeciesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateWatershedForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateWatershedForm.Designer.cs">
       <DependentUpon>CreateWatershedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditSampleAreaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditSampleAreaForm.Designer.cs">
+      <DependentUpon>EditSampleAreaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditSpeciesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditSpeciesForm.Designer.cs">
+      <DependentUpon>EditSpeciesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditWatershedForm.cs">
       <SubType>Form</SubType>
@@ -61,22 +89,48 @@
     <Compile Include="EditWatershedForm.Designer.cs">
       <DependentUpon>EditWatershedForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Infra\Extenstions\ValidationHelper.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Services\SampleAreaService.cs" />
+    <Compile Include="Model\Services\SpeciesService.cs" />
     <Compile Include="Model\Services\WatershedService.cs" />
+    <Compile Include="Model\ViewModel\SampleAreaIndexVM.cs" />
+    <Compile Include="Model\ViewModel\SpeciesIndexVM.cs" />
     <Compile Include="Model\ViewModel\WatershedIndexVM.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleAreaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SampleAreaForm.Designer.cs">
+      <DependentUpon>SampleAreaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpeciesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpeciesForm.Designer.cs">
+      <DependentUpon>SpeciesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WatershedForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WatershedForm.Designer.cs">
       <DependentUpon>WatershedForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CreateSampleAreaForm.resx">
+      <DependentUpon>CreateSampleAreaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateWatershedForm.resx">
+      <DependentUpon>CreateWatershedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditSampleAreaForm.resx">
+      <DependentUpon>EditSampleAreaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditWatershedForm.resx">
       <DependentUpon>EditWatershedForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,9 +146,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SampleAreaForm.resx">
+      <DependentUpon>SampleAreaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpeciesForm.resx">
+      <DependentUpon>SpeciesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WatershedForm.resx">
       <DependentUpon>WatershedForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\SalmonStatistics.Model.ViewModel.SampleAreaIndexVM.datasource" />
+    <None Include="Properties\DataSources\SalmonStatistics.Model.ViewModel.SpeciesIndexVM.datasource" />
+    <None Include="Properties\DataSources\SalmonStatistics.Model.ViewModel.WatershedIndexVM.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -108,8 +172,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Infra\Extenstions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

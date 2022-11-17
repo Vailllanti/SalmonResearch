@@ -7,17 +7,22 @@ using System.Threading.Tasks;
 
 namespace SalmonStatistics.Model.ViewModel
 {
-	public class WatershedIndexVM
+	public class SpeciesIndexVM
 	{
 		public int Id { get; set; }
 
-		public string RiverName { get; set; }
+		public string Species { get; set; }
+
+		public string Url { get; set; }
 	}
-	public class WatershedVM
+
+	public class SpeciesVM
 	{
 		public int Id { get; set; }
 
-		[Required(ErrorMessage = "流域名稱必填")]
-		public string RiverName { get; set; }
+		[Required(ErrorMessage = "物種學名必填")]
+		public string Species { get; set; }
+		//[Required]
+		public string Url { get; set; }
 	}
 }

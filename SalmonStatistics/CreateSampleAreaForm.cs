@@ -13,35 +13,46 @@ using System.Windows.Forms;
 
 namespace SalmonStatistics
 {
-	public partial class CreateWatershedForm : Form
+	public partial class CreateSampleAreaForm : Form
 	{
-		public CreateWatershedForm()
+		public CreateSampleAreaForm()
 		{
 			InitializeComponent();
+			InitForm();
+		}
+		private void InitForm()
+		{
+			WatershedIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+
+			List<WatershedIndexVM> watershed = new WatershedService()
+				.GetAll()/*.Prepend(new WatershedIndexVM { Id = 0, RiverName = String.Empty })*/.ToList();
+			this.WatershedIdComboBox.DataSource = watershed;
 		}
 
 		private void saveButton_Click(object sender, EventArgs e)
 		{
-			string riverName = riverTextBox.Text;
+			int WatershedId = ((WatershedIndexVM)WatershedIdComboBox.SelectedItem).Id;
+			string areaName = areaNameTextBox.Text;
 
-			WatershedVM model = new WatershedVM()
+			SampleAreaVM model = new SampleAreaVM()
 			{
-				RiverName = riverName,
+				AreaName = areaName,
+				WatershedId = WatershedId
 			};
 
 			Dictionary<string, Control> map = new Dictionary<string, Control>(StringComparer.CurrentCultureIgnoreCase)
 			{
-				{"RiverName",riverTextBox }
+				{"AreaName",areaNameTextBox }
 			};
 
 			bool isValid = ValidationHelper.Vaildate(model, map, errorProvider1);
 			if (!isValid) return;
 			try
 			{
-				new WatershedService().Create(model);
+				new SampleAreaService().Create(model);
 				this.DialogResult = DialogResult.OK;
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				MessageBox.Show("新增失敗，原因: " + ex.Message);
 			}

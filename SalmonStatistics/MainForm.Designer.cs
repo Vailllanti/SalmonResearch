@@ -51,36 +51,37 @@
             this.檢視資料ToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(1055, 27);
+			this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+			this.menuStrip1.Size = new System.Drawing.Size(791, 24);
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
 			// 修改流域ToolStripMenuItem
 			// 
 			this.修改流域ToolStripMenuItem.Name = "修改流域ToolStripMenuItem";
-			this.修改流域ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
-			this.修改流域ToolStripMenuItem.Text = "維護流域";
+			this.修改流域ToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
+			this.修改流域ToolStripMenuItem.Text = "編輯採樣流域";
 			this.修改流域ToolStripMenuItem.Click += new System.EventHandler(this.修改流域ToolStripMenuItem_Click);
 			// 
 			// 維護樣區ToolStripMenuItem
 			// 
 			this.維護樣區ToolStripMenuItem.Name = "維護樣區ToolStripMenuItem";
-			this.維護樣區ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
-			this.維護樣區ToolStripMenuItem.Text = "維護樣區";
+			this.維護樣區ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+			this.維護樣區ToolStripMenuItem.Text = "編輯樣區";
 			this.維護樣區ToolStripMenuItem.Click += new System.EventHandler(this.維護樣區ToolStripMenuItem_Click);
 			// 
 			// 維護物種ToolStripMenuItem
 			// 
 			this.維護物種ToolStripMenuItem.Name = "維護物種ToolStripMenuItem";
-			this.維護物種ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
-			this.維護物種ToolStripMenuItem.Text = "維護物種";
+			this.維護物種ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+			this.維護物種ToolStripMenuItem.Text = "編輯物種";
 			this.維護物種ToolStripMenuItem.Click += new System.EventHandler(this.維護物種ToolStripMenuItem_Click);
 			// 
 			// 維護採樣資料ToolStripMenuItem
 			// 
 			this.維護採樣資料ToolStripMenuItem.Name = "維護採樣資料ToolStripMenuItem";
-			this.維護採樣資料ToolStripMenuItem.Size = new System.Drawing.Size(113, 23);
-			this.維護採樣資料ToolStripMenuItem.Text = "維護採樣資料";
+			this.維護採樣資料ToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
+			this.維護採樣資料ToolStripMenuItem.Text = "編輯採樣資料";
 			// 
 			// 檢視資料ToolStripMenuItem
 			// 
@@ -89,35 +90,36 @@
             this.年分樣區ToolStripMenuItem,
             this.年分組群組成ToolStripMenuItem});
 			this.檢視資料ToolStripMenuItem.Name = "檢視資料ToolStripMenuItem";
-			this.檢視資料ToolStripMenuItem.Size = new System.Drawing.Size(83, 23);
+			this.檢視資料ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
 			this.檢視資料ToolStripMenuItem.Text = "檢視資料";
 			// 
 			// 年分流域ToolStripMenuItem
 			// 
 			this.年分流域ToolStripMenuItem.Name = "年分流域ToolStripMenuItem";
-			this.年分流域ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.年分流域ToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
 			this.年分流域ToolStripMenuItem.Text = "年分-流域";
 			// 
 			// 年分樣區ToolStripMenuItem
 			// 
 			this.年分樣區ToolStripMenuItem.Name = "年分樣區ToolStripMenuItem";
-			this.年分樣區ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.年分樣區ToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
 			this.年分樣區ToolStripMenuItem.Text = "年分-樣區";
 			// 
 			// 年分組群組成ToolStripMenuItem
 			// 
 			this.年分組群組成ToolStripMenuItem.Name = "年分組群組成ToolStripMenuItem";
-			this.年分組群組成ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.年分組群組成ToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
 			this.年分組群組成ToolStripMenuItem.Text = "年分-組群組成";
 			// 
 			// MainForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1055, 647);
+			this.ClientSize = new System.Drawing.Size(791, 518);
 			this.Controls.Add(this.menuStrip1);
 			this.IsMdiContainer = true;
 			this.MainMenuStrip = this.menuStrip1;
+			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.Name = "MainForm";
 			this.Text = "MainForm";
 			this.menuStrip1.ResumeLayout(false);
