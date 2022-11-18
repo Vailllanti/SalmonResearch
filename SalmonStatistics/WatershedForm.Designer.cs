@@ -30,10 +30,10 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.RiverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.watershedIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.AddButton = new System.Windows.Forms.Button();
+			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.RiverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.watershedIndexVMBindingSource)).BeginInit();
 			this.SuspendLayout();
@@ -51,15 +51,30 @@
             this.idDataGridViewTextBoxColumn,
             this.RiverName});
 			this.dataGridView1.DataSource = this.watershedIndexVMBindingSource;
-			this.dataGridView1.Location = new System.Drawing.Point(10, 42);
-			this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+			this.dataGridView1.Location = new System.Drawing.Point(14, 59);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.RowHeadersWidth = 51;
 			this.dataGridView1.RowTemplate.Height = 27;
-			this.dataGridView1.Size = new System.Drawing.Size(294, 374);
+			this.dataGridView1.Size = new System.Drawing.Size(393, 338);
 			this.dataGridView1.TabIndex = 1;
 			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+			// 
+			// watershedIndexVMBindingSource
+			// 
+			this.watershedIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.WatershedIndexVM);
+			// 
+			// AddButton
+			// 
+			this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.AddButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.AddButton.Location = new System.Drawing.Point(316, 15);
+			this.AddButton.Name = "AddButton";
+			this.AddButton.Size = new System.Drawing.Size(91, 38);
+			this.AddButton.TabIndex = 0;
+			this.AddButton.Text = "新增";
+			this.AddButton.UseVisualStyleBackColor = true;
+			this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
 			// 
 			// idDataGridViewTextBoxColumn
 			// 
@@ -75,36 +90,18 @@
 			this.RiverName.HeaderText = "流域名稱";
 			this.RiverName.Name = "RiverName";
 			this.RiverName.ReadOnly = true;
-			this.RiverName.Width = 200;
-			// 
-			// watershedIndexVMBindingSource
-			// 
-			this.watershedIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.WatershedIndexVM);
-			// 
-			// AddButton
-			// 
-			this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.AddButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-			this.AddButton.Location = new System.Drawing.Point(240, 11);
-			this.AddButton.Margin = new System.Windows.Forms.Padding(2);
-			this.AddButton.Name = "AddButton";
-			this.AddButton.Size = new System.Drawing.Size(64, 27);
-			this.AddButton.TabIndex = 0;
-			this.AddButton.Text = "新增";
-			this.AddButton.UseVisualStyleBackColor = true;
-			this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+			this.RiverName.Width = 300;
 			// 
 			// WatershedForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(315, 428);
+			this.ClientSize = new System.Drawing.Size(423, 414);
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.AddButton);
-			this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Margin = new System.Windows.Forms.Padding(2);
+			this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Name = "WatershedForm";
-			this.Text = "流域檢視";
+			this.Text = "採樣流域管理";
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.watershedIndexVMBindingSource)).EndInit();
 			this.ResumeLayout(false);

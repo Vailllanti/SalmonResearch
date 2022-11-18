@@ -13,7 +13,7 @@ namespace SalmonStatistics.Model.DTOs
 
 		public string Species { get; set; }
 
-		public string Url { get; set; }
+		public string ReferencesUrl { get; set; }
 	}
 
 	public static class SpeciesDTOExts
@@ -24,7 +24,7 @@ namespace SalmonStatistics.Model.DTOs
 			{
 				Id = dto.Id,
 				Species = dto.Species,
-				Url = dto.Url,
+				ReferencesUrl = dto.ReferencesUrl,
 			};
 		}
 
@@ -34,7 +34,7 @@ namespace SalmonStatistics.Model.DTOs
 			{
 				Id = dto.Id,
 				Species = dto.Species,
-				Url = dto.Url,
+				ReferencesUrl = dto.ReferencesUrl,
 			};
 		}
 	}

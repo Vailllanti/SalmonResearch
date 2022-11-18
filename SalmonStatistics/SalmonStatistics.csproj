@@ -59,6 +59,12 @@
     <Compile Include="CreateSampleAreaForm.Designer.cs">
       <DependentUpon>CreateSampleAreaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateSampleDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateSampleDataForm.Designer.cs">
+      <DependentUpon>CreateSampleDataForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateSpeciesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,12 @@
     <Compile Include="EditSampleAreaForm.Designer.cs">
       <DependentUpon>EditSampleAreaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditSampleDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditSampleDataForm.Designer.cs">
+      <DependentUpon>EditSampleDataForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditSpeciesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,8 +102,10 @@
       <DependentUpon>EditWatershedForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Infra\DAOs\SampleAreaDAO.cs" />
+    <Compile Include="Infra\DAOs\SampleDataDAO.cs" />
     <Compile Include="Infra\DAOs\SpeciesDAO.cs" />
     <Compile Include="Infra\DAOs\WatershedDAO.cs" />
+    <Compile Include="Infra\Extenstions\StringExtenstions.cs" />
     <Compile Include="Infra\Extenstions\ValidationHelper.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -100,12 +114,15 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\DTOs\SampleAreaDTO.cs" />
+    <Compile Include="Model\DTOs\SampleDataDTO.cs" />
     <Compile Include="Model\DTOs\SpeciesDTO.cs" />
     <Compile Include="Model\DTOs\WatershedDTO.cs" />
     <Compile Include="Model\Services\SampleAreaService.cs" />
+    <Compile Include="Model\Services\SampleDataService.cs" />
     <Compile Include="Model\Services\SpeciesService.cs" />
     <Compile Include="Model\Services\WatershedService.cs" />
     <Compile Include="Model\ViewModel\SampleAreaIndexVM.cs" />
+    <Compile Include="Model\ViewModel\SampleDataIndexVM.cs" />
     <Compile Include="Model\ViewModel\SpeciesIndexVM.cs" />
     <Compile Include="Model\ViewModel\WatershedIndexVM.cs" />
     <Compile Include="Program.cs" />
@@ -115,6 +132,12 @@
     </Compile>
     <Compile Include="SampleAreaForm.Designer.cs">
       <DependentUpon>SampleAreaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SampleDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SampleDataForm.Designer.cs">
+      <DependentUpon>SampleDataForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SpeciesForm.cs">
       <SubType>Form</SubType>
@@ -131,11 +154,23 @@
     <EmbeddedResource Include="CreateSampleAreaForm.resx">
       <DependentUpon>CreateSampleAreaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateSampleDataForm.resx">
+      <DependentUpon>CreateSampleDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateSpeciesForm.resx">
+      <DependentUpon>CreateSpeciesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateWatershedForm.resx">
       <DependentUpon>CreateWatershedForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditSampleAreaForm.resx">
       <DependentUpon>EditSampleAreaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditSampleDataForm.resx">
+      <DependentUpon>EditSampleDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditSpeciesForm.resx">
+      <DependentUpon>EditSpeciesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditWatershedForm.resx">
       <DependentUpon>EditWatershedForm.cs</DependentUpon>
@@ -155,6 +190,9 @@
     <EmbeddedResource Include="SampleAreaForm.resx">
       <DependentUpon>SampleAreaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SampleDataForm.resx">
+      <DependentUpon>SampleDataForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SpeciesForm.resx">
       <DependentUpon>SpeciesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +201,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SalmonStatistics.Model.ViewModel.SampleAreaIndexVM.datasource" />
+    <None Include="Properties\DataSources\SalmonStatistics.Model.ViewModel.SampleDataIndexVM.datasource" />
     <None Include="Properties\DataSources\SalmonStatistics.Model.ViewModel.SpeciesIndexVM.datasource" />
     <None Include="Properties\DataSources\SalmonStatistics.Model.ViewModel.WatershedIndexVM.datasource" />
     <None Include="Properties\Settings.settings">

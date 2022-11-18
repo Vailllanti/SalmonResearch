@@ -49,37 +49,18 @@ namespace SalmonStatistics
 		{
 			WatershedIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
-			//var sql = "select * from Watershed order by Id";
-			//var dpHelper = new SqlDbHelper("default");
-
-			//List<WatershedVM> Watershed = dpHelper.Select(sql, null)
-			//					.AsEnumerable()
-			//					.Select(row => ToWatershedVM(row))
-			//					.ToList();
-			var Watershed = new WatershedDAO().GetAll().ToList();
+			var Watershed = new WatershedDAO().GetAll().Select(dto => dto.ToVM()).ToList();
 
 			this.WatershedIdComboBox.DataSource = Watershed;
 		}
-		//private WatershedVM ToWatershedVM(DataRow row)
-		//{
-		//	return new WatershedVM
-		//	{
-		//		Id = row.Field<int>("Id"),
-		//		RiverName = row.Field<string>("RiverName"),
-		//	};
-		//}
+
 
 		private void deleteButton_Click(object sender, EventArgs e)
 		{
 			if (MessageBox.Show("確定刪除?", "刪除紀錄",MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
 
 			new SampleAreaService().Delete(id);
-			//string sql = @"DELETE FROM SampleArea WHERE Id=@Id";
-			//var parameters = new SqlParameterBulider()
-			//				.AddInt("Id", this.id)
-			//				.Build();
-
-			//new SqlDbHelper("default").ExecuteNonQuery(sql, parameters);
+			
 			this.DialogResult = DialogResult.OK;
 		}
 

@@ -14,7 +14,7 @@ namespace SalmonStatistics.Model.ViewModel
 
 		public string Species { get; set; }
 
-		public string Url { get; set; }
+		public string ReferencesUrl { get; set; }
 	}
 
 	public class SpeciesVM
@@ -24,7 +24,7 @@ namespace SalmonStatistics.Model.ViewModel
 		[Required(ErrorMessage = "物種學名必填")]
 		public string Species { get; set; }
 		//[Required]
-		public string Url { get; set; }
+		public string ReferencesUrl { get; set; }
 	}
 
 	public static class SpeciesVMExts 
@@ -35,7 +35,7 @@ namespace SalmonStatistics.Model.ViewModel
 			{
 				Id = vm.Id,
 				Species = vm.Species,
-				Url = vm.Url,
+				ReferencesUrl = vm.ReferencesUrl,
 			};
 		}
 	}

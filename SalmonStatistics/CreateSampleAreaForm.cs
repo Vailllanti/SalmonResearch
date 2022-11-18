@@ -27,13 +27,13 @@ namespace SalmonStatistics
 			WatershedIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
 			var watershed = new WatershedDAO()
-				.GetAll()/*.Prepend(new WatershedIndexVM { Id = 0, RiverName = String.Empty })*/.ToList();
+				.GetAll().Select(dto => dto.ToVM()).ToList();
 			this.WatershedIdComboBox.DataSource = watershed;
 		}
 
 		private void saveButton_Click(object sender, EventArgs e)
 		{
-			int WatershedId = ((WatershedIndexVM)WatershedIdComboBox.SelectedItem).Id;
+			int WatershedId = ((WatershedVM)WatershedIdComboBox.SelectedItem).Id;
 			string areaName = areaNameTextBox.Text;
 
 			SampleAreaVM model = new SampleAreaVM()

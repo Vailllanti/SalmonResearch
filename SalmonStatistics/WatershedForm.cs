@@ -25,7 +25,7 @@ namespace SalmonStatistics
 
 		private void DisplayWatershed()
 		{
-			watershed = new WatershedDAO().GetAll().Select(dto => dto.ToindexVM()).ToArray();
+			watershed = new WatershedDAO().GetAll().Select(dto => dto.ToIndexVM()).ToArray();
 			BindData(watershed);
 		}
 		private void BindData(WatershedIndexVM[] model)
@@ -56,7 +56,6 @@ namespace SalmonStatistics
 			{
 				DisplayWatershed();
 			}
-
 		}
 	}
 }

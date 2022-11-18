@@ -25,7 +25,7 @@ namespace SalmonStatistics.Model.DTOs
 			};
 		}
 
-		public static WatershedIndexVM ToindexVM(this WatershedDTO dto)
+		public static WatershedIndexVM ToIndexVM(this WatershedDTO dto)
 		{
 			return new WatershedIndexVM
 			{

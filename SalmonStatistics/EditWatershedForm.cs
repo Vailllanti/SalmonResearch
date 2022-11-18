@@ -19,46 +19,26 @@ namespace SalmonStatistics
 	public partial class EditWatershedForm : Form
 	{
 		private int id;
+
 		public EditWatershedForm(int id)
 		{
 			InitializeComponent();
 			this.id = id;
 		}
+
 		private void EditWatershedForm_Load(object sender, EventArgs e)
 		{
 			BindData(id);
 		}
+
 		private void BindData(int id)
 		{
-			//string sql = "SELECT * FROM Watershed WHERE Id = @Id";
-			//var parameter = new SqlParameterBulider()
-			//				.AddInt("Id", id)
-			//				.Build();
-
-			//DataTable dt = new SqlDbHelper("default").Select(sql, parameter);
-
-			//if (dt.Rows.Count == 0)
-			//{
-			//	MessageBox.Show("抱歉，找不到您要的資料");
-			//	this.DialogResult = DialogResult.Abort;
-			//	return;
-			//}
-			//WatershedVM model = ToWatershedVM(dt.Rows[0]);
 			WatershedDTO dTO = new WatershedDAO().GetOne(id);
 
 			WatershedVM model = dTO.ToVM();
 
 			riverTextBox.Text = model.RiverName;
-
 		}
-		//private WatershedVM ToWatershedVM(DataRow row)
-		//{
-		//	return new WatershedVM
-		//	{
-		//		Id = row.Field<int>("Id"),
-		//		RiverName = row.Field<string>("RiverName"),
-		//	};
-		//}
 
 		private void updateButton_Click(object sender, EventArgs e)
 		{
