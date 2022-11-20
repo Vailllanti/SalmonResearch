@@ -10,7 +10,7 @@ namespace SalmonStatistics.Infra.Extenstions
 {
 	public class ValidationHelper
 	{
-		public static bool Vaildate<T>(T model,Dictionary<string,Control>map,ErrorProvider errorProvider)
+		public static bool Validate<T>(T model,Dictionary<string,Control>map,ErrorProvider errorProvider)
 		{
 			ValidationContext context = new ValidationContext(model,null,null);
 

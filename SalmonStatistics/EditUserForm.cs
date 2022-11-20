@@ -15,56 +15,58 @@ using System.Windows.Forms;
 
 namespace SalmonStatistics
 {
-	public partial class EditSpeciesForm : Form
+	public partial class EditUserForm : Form
 	{
 		private int id;
-
-		public EditSpeciesForm(int id)
+		public EditUserForm(int id)
 		{
 			InitializeComponent();
 			this.id = id;
 		}
-
-		private void EditSpeciesForm_Load(object sender, EventArgs e)
+		private void EditUserForm_Load(object sender, EventArgs e)
 		{
 			BindData(id);
 		}
 
 		private void BindData(int id)
 		{
-			SpeciesDTO dTO = new SpeciesDAO().GetOne(id);
+			UserDTO dTO = new UserDAO().GetOne(id);
 
-			SpeciesVM model = dTO.ToVM();
+			UserVM model = dTO.ToVM();
 
-			speciesTextBox.Text = model.Species;
-			referencesTextBox.Text = model.ReferencesUrl;
+			AccountTextBox.Text = model.Account;
+			PasswordTextBox.Text = model.Password;
+			NameTextBox.Text = model.Name;
 		}
 
-		private void saveButton_Click(object sender, EventArgs e)
+		private void updateButton_Click(object sender, EventArgs e)
 		{
-			string species = speciesTextBox.Text;
-			string referencesUrl = referencesTextBox.Text;
+			string account = AccountTextBox.Text;
+			string password = PasswordTextBox.Text;
+			string name = NameTextBox.Text;
 
-			SpeciesVM model = new SpeciesVM()
+			UserVM model = new UserVM()
 			{
 				Id = id,
-				Species = species,
-				ReferencesUrl = referencesUrl
+				Account = account,
+				Password = password,
+				Name = name,
 			};
 
 			Dictionary<string, Control> map = new Dictionary<string, Control>(StringComparer.CurrentCultureIgnoreCase)
 			{
-				{"Species",speciesTextBox },
-				{"ReferencesUrl",referencesTextBox },
+				{"Account",AccountTextBox },
+				{"Password",PasswordTextBox},
+				{"Name",NameTextBox},
 			};
 
 			bool isValid = ValidationHelper.Validate(model, map, errorProvider1);
 			if (!isValid) return;
 
-			SpeciesDTO dTO = model.ToDTO();
+			UserDTO dTO = model.ToDTO();
 			try
 			{
-				new SpeciesService().Update(dTO);
+				new UserService().Update(dTO);
 				this.DialogResult = DialogResult.OK;
 			}
 			catch (Exception ex)
@@ -77,7 +79,7 @@ namespace SalmonStatistics
 		{
 			if (MessageBox.Show("確定刪除?", "刪除紀錄", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
 
-			new SpeciesService().Delete(id);
+			new UserService().Delete(id);
 
 			this.DialogResult = DialogResult.OK;
 		}

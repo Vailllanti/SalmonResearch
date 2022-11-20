@@ -39,9 +39,12 @@ namespace SalmonStatistics
 
 			areaNameComboBox.SelectedItem = ((List<SampleAreaVM>)areaNameComboBox.DataSource)
 													.FirstOrDefault(x => x.Id == model.SampleAreaId);
-			//speciesComboBox.SelectedItem = ((List<SpeciesVM>)speciesComboBox.DataSource)
-													//.FirstOrDefault(x => x.Id == model.SpeciesId);
-			samplingDateTextBox.Text = model.SamplngDate.ToString("yyyy/MM/dd");
+			speciesComboBox.SelectedItem = ((List<SpeciesVM>)speciesComboBox.DataSource)
+													.FirstOrDefault(x => x.Id == model.SpeciesId);
+			samplingDateTextBox.Text = model.SamplingDate;
+			AdultNumTextBox.Text = model.AdultNumber.ToString();
+			SubadultNumTextBox.Text = model.SubadultNumber.ToString();
+			JuvenileNumTextBox.Text = model.JuvenileNumber.ToString();
 		}
 
 		private void InitForm()
@@ -50,8 +53,10 @@ namespace SalmonStatistics
 			speciesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
 			var areaName = new SampleAreaDAO().GetAll(id).Select(dto => dto.ToVM()).ToList();
+			var species = new SpeciesDAO().GetAll().Select(dto => dto.ToVM()).ToList();
 
 			this.areaNameComboBox.DataSource = areaName;
+			this.speciesComboBox.DataSource = species;
 		}
 
 		private void deleteButton_Click(object sender, EventArgs e)
@@ -65,8 +70,8 @@ namespace SalmonStatistics
 
 		private void saveButton_Click(object sender, EventArgs e)
 		{
-			int sampleAreaId = ((SampleDataVM)areaNameComboBox.SelectedItem).Id;
-			int speciesId = ((SampleAreaVM)speciesComboBox.SelectedItem).Id;
+			int sampleAreaId = ((SampleAreaVM)areaNameComboBox.SelectedItem).Id;
+			int speciesId = ((SpeciesVM)speciesComboBox.SelectedItem).Id;
 			string samplingDate = samplingDateTextBox.Text;
 			string adultNum = AdultNumTextBox.Text;
 			string subadultNum = SubadultNumTextBox.Text;
@@ -77,10 +82,10 @@ namespace SalmonStatistics
 				Id = id,
 				SampleAreaId = sampleAreaId,
 				SpeciesId = speciesId,
-				SamplngDate = Convert.ToDateTime(samplingDate),
-				AdultNumber = adultNum.ToInt(0),
-				SubadultNumber = subadultNum.ToInt(0),
-				JuvenileNumber = JuvenileNum.ToInt(0),
+				SamplingDate = samplingDate,
+				AdultNumber = adultNum.ToInt(-1),
+				SubadultNumber = subadultNum.ToInt(-1),
+				JuvenileNumber = JuvenileNum.ToInt(-1),
 			};
 
 			Dictionary<string, Control> map = new Dictionary<string, Control>(StringComparer.CurrentCultureIgnoreCase)
@@ -91,7 +96,7 @@ namespace SalmonStatistics
 				{"SamplngDate",samplingDateTextBox },
 			};
 
-			bool isValid = ValidationHelper.Vaildate(model, map, errorProvider1);
+			bool isValid = ValidationHelper.Validate(model, map, errorProvider1);
 			if (!isValid) return;
 
 			SampleDataDTO dTO = model.ToDTO();

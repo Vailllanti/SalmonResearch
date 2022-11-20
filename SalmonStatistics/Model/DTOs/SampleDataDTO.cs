@@ -25,7 +25,7 @@ namespace SalmonStatistics.Model.DTOs
 
 		public int JuvenileNumber { get; set; }
 
-		public DateTime SamplngDate { get; set; }
+		public DateTime SamplingDate { get; set; }
 	}
 
 	public static class SampleDataDTOExts
@@ -41,7 +41,7 @@ namespace SalmonStatistics.Model.DTOs
 				AdultNumber = dto.AdultNumber,
 				SubadultNumber = dto.SubadultNumber,
 				JuvenileNumber = dto.JuvenileNumber,
-				SamplngDate = dto.SamplngDate,
+				SamplingDate = dto.SamplingDate.ToString("yyyy/MM/dd"),
 			};
 		}
 
@@ -58,7 +58,7 @@ namespace SalmonStatistics.Model.DTOs
 				AdultNumber = dto.AdultNumber,
 				SubadultNumber = dto.SubadultNumber,
 				JuvenileNumber = dto.JuvenileNumber,
-				SamplngDate = dto.SamplngDate,
+				SamplingDate = dto.SamplingDate,
 			};
 		}
 	}

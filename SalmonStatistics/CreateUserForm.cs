@@ -8,44 +8,46 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SalmonStatistics
 {
-	public partial class CreateSpeciesForm : Form
+	public partial class CreateUserForm : Form
 	{
-		public CreateSpeciesForm()
+		public CreateUserForm()
 		{
 			InitializeComponent();
 		}
 
 		private void saveButton_Click(object sender, EventArgs e)
 		{
-			string species = speciesTextBox.Text;
-			string references = referencesTextBox.Text;
+			string account = AccountTextBox.Text;
+			string password = PasswordTextBox.Text;
+			string name = NameTextBox.Text;
 
-			SpeciesVM model = new SpeciesVM()
+			UserVM model = new UserVM()
 			{
-				Species = species,
-				ReferencesUrl = references,
+				Account = account,
+				Password = password,
+				Name = name,
 			};
 
 			Dictionary<string, Control> map = new Dictionary<string, Control>(StringComparer.CurrentCultureIgnoreCase)
 			{
-				{"Species",speciesTextBox },
-				{"ReferencesUrl",referencesTextBox }
+				{"Account",AccountTextBox },
+				{"Password",PasswordTextBox},
+				{"Name",NameTextBox},
 			};
 
 			bool isValid = ValidationHelper.Validate(model, map, errorProvider1);
 			if (!isValid) return;
 
-			SpeciesDTO dTO = model.ToDTO();
+			UserDTO dTO = model.ToDTO();
 			try
 			{
-				new SpeciesService().Create(dTO);
+				new UserService().Create(dTO);
 				this.DialogResult = DialogResult.OK;
 			}
 			catch (Exception ex)

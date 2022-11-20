@@ -55,7 +55,7 @@ namespace SalmonStatistics
 				{"RiverName",riverTextBox }
 			};
 
-			bool isValid = ValidationHelper.Vaildate(model, map, errorProvider1);
+			bool isValid = ValidationHelper.Validate(model, map, errorProvider1);
 			if (!isValid) return;
 
 			WatershedDTO dTO = model.ToDTO();

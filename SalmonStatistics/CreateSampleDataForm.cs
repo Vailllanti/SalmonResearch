@@ -72,21 +72,21 @@ namespace SalmonStatistics
 			{
 				SampleAreaId = sampleAreaId,
 				SpeciesId = speciesId,
-				SamplngDate = Convert.ToDateTime(samplingDate),
-				AdultNumber = adultNum.ToInt(0),
-				SubadultNumber = subadultNum.ToInt(0),
-				JuvenileNumber = JuvenileNum.ToInt(0),
+				SamplingDate = samplingDate,
+				AdultNumber = adultNum.ToInt(-1),
+				SubadultNumber = subadultNum.ToInt(-1),
+				JuvenileNumber = JuvenileNum.ToInt(-1),
 			};
 
 			Dictionary<string, Control> map = new Dictionary<string, Control>(StringComparer.CurrentCultureIgnoreCase)
 			{
-				{"sampleingDate",samplingDateTextBox },
-				{"AdultNum",AdultNumTextBox },
-				{"SubadultNum",SubadultNumTextBox },
-				{"JuvenileNum",JuvenileNumTextBox },
+				{"AdultNumber",AdultNumTextBox },
+				{"SubadultNumber",SubadultNumTextBox },
+				{"JuvenileNumber",JuvenileNumTextBox },
+				{"SamplingDate",samplingDateTextBox },
 			};
 
-			bool isValid = ValidationHelper.Vaildate(model, map, errorProvider1);
+			bool isValid = ValidationHelper.Validate(model, map, errorProvider1);
 			if (!isValid) return;
 
 			SampleDataDTO dTO = model.ToDTO();
@@ -100,41 +100,6 @@ namespace SalmonStatistics
 			{
 				MessageBox.Show("新增失敗，原因: " + ex.Message);
 			}
-		}
-
-		private void label4_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label3_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void JuvenileNumTextBox_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void SubadultNumTextBox_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void AdultNumTextBox_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label5_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label1_Click(object sender, EventArgs e)
-		{
-
 		}
 	}
 }

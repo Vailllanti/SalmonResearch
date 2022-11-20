@@ -1,8 +1,10 @@
-﻿using SalmonStatistics.Model.DTOs;
+﻿using SalmonStatistics.Infra.Extenstions;
+using SalmonStatistics.Model.DTOs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,7 +28,7 @@ namespace SalmonStatistics.Model.ViewModel
 
 		public int JuvenileNumber { get; set; }
 
-		public DateTime SamplngDate { get; set; }
+		public DateTime SamplingDate { get; set; }
 	}
 	public class SampleDataVM
 	{
@@ -36,17 +38,18 @@ namespace SalmonStatistics.Model.ViewModel
 
 		public int SampleAreaId { get; set; }
 
-		[Required]
+		[Range(0, 9999, ErrorMessage ="請輸入大於0的整數")]
 		public int AdultNumber { get; set; }
 
-		[Required]
+		[Range(0, 9999, ErrorMessage = "請輸入大於0的整數")]
 		public int SubadultNumber { get; set; }
 
-		[Required]
+		[Range(0, 9999, ErrorMessage = "請輸入大於0的整數")]
 		public int JuvenileNumber { get; set; }
 
 		[Required(ErrorMessage = "採樣日期必填")]
-		public DateTime SamplngDate { get; set; }
+		[DateTimeAttribute(ErrorMessage ="請輸入正確的日期格式，例如1992/10/05")]
+		public string SamplingDate { get; set; }
 	}
 
 	public static class SampleDataVMExts
@@ -62,7 +65,7 @@ namespace SalmonStatistics.Model.ViewModel
 				AdultNumber = vm.AdultNumber,
 				SubadultNumber = vm.SubadultNumber,
 				JuvenileNumber = vm.JuvenileNumber,
-				SamplngDate = vm.SamplngDate,
+				SamplingDate = Convert.ToDateTime(vm.SamplingDate),
 			};
 		}
 	}

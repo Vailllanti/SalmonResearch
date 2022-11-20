@@ -44,14 +44,14 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.samplingDateTextBox = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
 			this.watershedComboBox = new System.Windows.Forms.ComboBox();
 			this.watershedIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.label7 = new System.Windows.Forms.Label();
+			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.sampleAreaIndexVMBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.speciesIndexVMBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.watershedIndexVMBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// areaNameComboBox
@@ -59,10 +59,10 @@
 			this.areaNameComboBox.DataSource = this.sampleAreaIndexVMBindingSource;
 			this.areaNameComboBox.DisplayMember = "AreaName";
 			this.areaNameComboBox.FormattingEnabled = true;
-			this.areaNameComboBox.Location = new System.Drawing.Point(96, 83);
+			this.areaNameComboBox.Location = new System.Drawing.Point(114, 83);
 			this.areaNameComboBox.Margin = new System.Windows.Forms.Padding(7);
 			this.areaNameComboBox.Name = "areaNameComboBox";
-			this.areaNameComboBox.Size = new System.Drawing.Size(305, 29);
+			this.areaNameComboBox.Size = new System.Drawing.Size(305, 33);
 			this.areaNameComboBox.TabIndex = 1;
 			this.areaNameComboBox.ValueMember = "Id";
 			// 
@@ -72,15 +72,15 @@
 			// 
 			// AdultNumTextBox
 			// 
-			this.AdultNumTextBox.Location = new System.Drawing.Point(357, 194);
+			this.AdultNumTextBox.Location = new System.Drawing.Point(388, 193);
 			this.AdultNumTextBox.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
 			this.AdultNumTextBox.Name = "AdultNumTextBox";
-			this.AdultNumTextBox.Size = new System.Drawing.Size(66, 29);
+			this.AdultNumTextBox.Size = new System.Drawing.Size(66, 34);
 			this.AdultNumTextBox.TabIndex = 4;
 			// 
 			// saveButton
 			// 
-			this.saveButton.Location = new System.Drawing.Point(511, 242);
+			this.saveButton.Location = new System.Drawing.Point(542, 241);
 			this.saveButton.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
 			this.saveButton.Name = "saveButton";
 			this.saveButton.Size = new System.Drawing.Size(76, 32);
@@ -91,18 +91,18 @@
 			// 
 			// SubadultNumTextBox
 			// 
-			this.SubadultNumTextBox.Location = new System.Drawing.Point(439, 195);
+			this.SubadultNumTextBox.Location = new System.Drawing.Point(470, 193);
 			this.SubadultNumTextBox.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
 			this.SubadultNumTextBox.Name = "SubadultNumTextBox";
-			this.SubadultNumTextBox.Size = new System.Drawing.Size(66, 29);
+			this.SubadultNumTextBox.Size = new System.Drawing.Size(66, 34);
 			this.SubadultNumTextBox.TabIndex = 5;
 			// 
 			// JuvenileNumTextBox
 			// 
-			this.JuvenileNumTextBox.Location = new System.Drawing.Point(521, 195);
+			this.JuvenileNumTextBox.Location = new System.Drawing.Point(552, 194);
 			this.JuvenileNumTextBox.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
 			this.JuvenileNumTextBox.Name = "JuvenileNumTextBox";
-			this.JuvenileNumTextBox.Size = new System.Drawing.Size(66, 29);
+			this.JuvenileNumTextBox.Size = new System.Drawing.Size(66, 34);
 			this.JuvenileNumTextBox.TabIndex = 6;
 			// 
 			// speciesComboBox
@@ -111,10 +111,10 @@
 			this.speciesComboBox.DisplayMember = "Species";
 			this.speciesComboBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.speciesComboBox.FormattingEnabled = true;
-			this.speciesComboBox.Location = new System.Drawing.Point(96, 194);
+			this.speciesComboBox.Location = new System.Drawing.Point(114, 194);
 			this.speciesComboBox.Margin = new System.Windows.Forms.Padding(7);
 			this.speciesComboBox.Name = "speciesComboBox";
-			this.speciesComboBox.Size = new System.Drawing.Size(246, 27);
+			this.speciesComboBox.Size = new System.Drawing.Size(246, 30);
 			this.speciesComboBox.TabIndex = 3;
 			this.speciesComboBox.ValueMember = "Id";
 			// 
@@ -128,81 +128,77 @@
 			this.label1.Location = new System.Drawing.Point(29, 86);
 			this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(46, 21);
+			this.label1.Size = new System.Drawing.Size(57, 25);
 			this.label1.TabIndex = 6;
 			this.label1.Text = "樣區:";
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(29, 198);
+			this.label2.Location = new System.Drawing.Point(29, 194);
 			this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(46, 21);
+			this.label2.Size = new System.Drawing.Size(57, 25);
 			this.label2.TabIndex = 6;
 			this.label2.Text = "物種:";
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(371, 165);
+			this.label3.Location = new System.Drawing.Point(396, 164);
 			this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(42, 21);
+			this.label3.Size = new System.Drawing.Size(52, 25);
 			this.label3.TabIndex = 6;
 			this.label3.Text = "成魚";
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(442, 165);
+			this.label4.Location = new System.Drawing.Point(468, 163);
 			this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(58, 21);
+			this.label4.Size = new System.Drawing.Size(72, 25);
 			this.label4.TabIndex = 6;
 			this.label4.Text = "亞成魚";
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(529, 165);
+			this.label5.Location = new System.Drawing.Point(559, 164);
 			this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(42, 21);
+			this.label5.Size = new System.Drawing.Size(52, 25);
 			this.label5.TabIndex = 6;
 			this.label5.Text = "稚魚";
 			// 
 			// samplingDateTextBox
 			// 
-			this.samplingDateTextBox.Location = new System.Drawing.Point(96, 149);
+			this.samplingDateTextBox.Location = new System.Drawing.Point(114, 149);
 			this.samplingDateTextBox.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
 			this.samplingDateTextBox.Name = "samplingDateTextBox";
-			this.samplingDateTextBox.Size = new System.Drawing.Size(166, 29);
+			this.samplingDateTextBox.Size = new System.Drawing.Size(166, 34);
 			this.samplingDateTextBox.TabIndex = 2;
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(15, 149);
+			this.label6.Location = new System.Drawing.Point(15, 152);
 			this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(78, 21);
+			this.label6.Size = new System.Drawing.Size(97, 25);
 			this.label6.TabIndex = 6;
 			this.label6.Text = "採樣日期:";
-			// 
-			// errorProvider1
-			// 
-			this.errorProvider1.ContainerControl = this;
 			// 
 			// watershedComboBox
 			// 
 			this.watershedComboBox.DataSource = this.watershedIndexVMBindingSource;
 			this.watershedComboBox.DisplayMember = "RiverName";
 			this.watershedComboBox.FormattingEnabled = true;
-			this.watershedComboBox.Location = new System.Drawing.Point(96, 40);
+			this.watershedComboBox.Location = new System.Drawing.Point(114, 40);
 			this.watershedComboBox.Margin = new System.Windows.Forms.Padding(7);
 			this.watershedComboBox.Name = "watershedComboBox";
-			this.watershedComboBox.Size = new System.Drawing.Size(166, 29);
+			this.watershedComboBox.Size = new System.Drawing.Size(166, 33);
 			this.watershedComboBox.TabIndex = 0;
 			this.watershedComboBox.ValueMember = "Id";
 			this.watershedComboBox.SelectionChangeCommitted += new System.EventHandler(this.watershedComboBox_SelectionChangeCommitted);
@@ -217,15 +213,19 @@
 			this.label7.Location = new System.Drawing.Point(15, 43);
 			this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(78, 21);
+			this.label7.Size = new System.Drawing.Size(97, 25);
 			this.label7.TabIndex = 6;
 			this.label7.Text = "採樣流域:";
 			// 
+			// errorProvider1
+			// 
+			this.errorProvider1.ContainerControl = this;
+			// 
 			// CreateSampleDataForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(610, 310);
+			this.ClientSize = new System.Drawing.Size(655, 311);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
@@ -250,8 +250,8 @@
 			this.Text = "新增採樣資料";
 			((System.ComponentModel.ISupportInitialize)(this.sampleAreaIndexVMBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.speciesIndexVMBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.watershedIndexVMBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -272,11 +272,11 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox samplingDateTextBox;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.ErrorProvider errorProvider1;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.ComboBox watershedComboBox;
 		private System.Windows.Forms.BindingSource sampleAreaIndexVMBindingSource;
 		private System.Windows.Forms.BindingSource watershedIndexVMBindingSource;
 		private System.Windows.Forms.BindingSource speciesIndexVMBindingSource;
+		private System.Windows.Forms.ErrorProvider errorProvider1;
 	}
 }

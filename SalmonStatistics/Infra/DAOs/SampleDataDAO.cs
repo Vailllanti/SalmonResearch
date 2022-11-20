@@ -45,7 +45,7 @@ namespace SalmonStatistics.Infra.DAOs
 					AdultNumber = row.Field<int>("AdultNumber"),
 					SubadultNumber = row.Field<int>("SubadultNumber"),
 					JuvenileNumber = row.Field<int>("JuvenileNumber"),
-					SamplngDate = row.Field<DateTime>("SamplngDate"),
+					SamplingDate = row.Field<DateTime>("SamplingDate"),
 				});
 		}
 
@@ -72,15 +72,15 @@ namespace SalmonStatistics.Infra.DAOs
 				AdultNumber = row.Field<int>("AdultNumber"),
 				SubadultNumber = row.Field<int>("SubadultNumber"),
 				JuvenileNumber = row.Field<int>("JuvenileNumber"),
-				SamplngDate = row.Field<DateTime>("SamplngDate"),
+				SamplingDate = row.Field<DateTime>("SamplingDate"),
 			};
 		}
 
 		public void Create(SampleDataDTO model)
 		{
 			string sql = @"insert into SampleData
-(SpeciesId,SampleAreaId,AdultNumber,SubadultNumber,JuvenileNumber,SamplngDate) 
-values(@SpeciesId,@SampleAreaId,@AdultNumber,@SubadultNumber,@JuvenileNumber,@SamplngDate)";
+(SpeciesId,SampleAreaId,AdultNumber,SubadultNumber,JuvenileNumber,SamplingDate) 
+values(@SpeciesId,@SampleAreaId,@AdultNumber,@SubadultNumber,@JuvenileNumber,@SamplingDate)";
 
 			var parameters = new SqlParameterBulider()
 							.AddInt("SpeciesId", model.SpeciesId)
@@ -88,7 +88,7 @@ values(@SpeciesId,@SampleAreaId,@AdultNumber,@SubadultNumber,@JuvenileNumber,@Sa
 							.AddInt("AdultNumber", model.AdultNumber)
 							.AddInt("SubadultNumber", model.SubadultNumber)
 							.AddInt("JuvenileNumber", model.JuvenileNumber)
-							.AddDatetime("SamplngDate",model.SamplngDate)
+							.AddDatetime("SamplingDate",model.SamplingDate)
 							.Build();
 
 			new SqlDbHelper("default").ExecuteNonQuery(sql, parameters);
@@ -109,7 +109,7 @@ values(@SpeciesId,@SampleAreaId,@AdultNumber,@SubadultNumber,@JuvenileNumber,@Sa
 
 			string sql = @"Update SampleData set 
 SpeciesId=@SpeciesId,SampleAreaId=@SampleAreaId,AdultNumber=@AdultNumber,SubadultNumber=@SubadultNumber
-,JuvenileNumber=@JuvenileNumber,SamplngDate=@SamplngDate where Id = @Id";
+,JuvenileNumber=@JuvenileNumber,SamplingDate=@SamplingDate where Id = @Id";
 
 			var parameters = new SqlParameterBulider()
 							.AddInt("SpeciesId", model.SpeciesId)
@@ -117,7 +117,7 @@ SpeciesId=@SpeciesId,SampleAreaId=@SampleAreaId,AdultNumber=@AdultNumber,Subadul
 							.AddInt("AdultNumber", model.AdultNumber)
 							.AddInt("SubadultNumber", model.SubadultNumber)
 							.AddInt("JuvenileNumber", model.JuvenileNumber)
-							.AddDatetime("SamplngDate", model.SamplngDate)
+							.AddDatetime("SamplingDate", model.SamplingDate)
 							.AddInt("Id", model.Id)
 							.Build();
 

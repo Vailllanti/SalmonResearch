@@ -34,6 +34,8 @@
 			this.updateButton = new System.Windows.Forms.Button();
 			this.deleteButton = new System.Windows.Forms.Button();
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -41,27 +43,27 @@
 			// 
 			this.WatershedIdComboBox.DisplayMember = "RiverName";
 			this.WatershedIdComboBox.FormattingEnabled = true;
-			this.WatershedIdComboBox.Location = new System.Drawing.Point(34, 47);
-			this.WatershedIdComboBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+			this.WatershedIdComboBox.Location = new System.Drawing.Point(88, 49);
+			this.WatershedIdComboBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
 			this.WatershedIdComboBox.Name = "WatershedIdComboBox";
-			this.WatershedIdComboBox.Size = new System.Drawing.Size(284, 24);
+			this.WatershedIdComboBox.Size = new System.Drawing.Size(377, 33);
 			this.WatershedIdComboBox.TabIndex = 5;
 			this.WatershedIdComboBox.ValueMember = "Id";
 			// 
 			// areaNameTextBox
 			// 
-			this.areaNameTextBox.Location = new System.Drawing.Point(34, 85);
-			this.areaNameTextBox.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+			this.areaNameTextBox.Location = new System.Drawing.Point(88, 99);
+			this.areaNameTextBox.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
 			this.areaNameTextBox.Name = "areaNameTextBox";
-			this.areaNameTextBox.Size = new System.Drawing.Size(284, 23);
+			this.areaNameTextBox.Size = new System.Drawing.Size(377, 34);
 			this.areaNameTextBox.TabIndex = 3;
 			// 
 			// updateButton
 			// 
-			this.updateButton.Location = new System.Drawing.Point(228, 122);
-			this.updateButton.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+			this.updateButton.Location = new System.Drawing.Point(379, 153);
+			this.updateButton.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
 			this.updateButton.Name = "updateButton";
-			this.updateButton.Size = new System.Drawing.Size(90, 36);
+			this.updateButton.Size = new System.Drawing.Size(88, 42);
 			this.updateButton.TabIndex = 4;
 			this.updateButton.Text = "保存";
 			this.updateButton.UseVisualStyleBackColor = true;
@@ -69,10 +71,10 @@
 			// 
 			// deleteButton
 			// 
-			this.deleteButton.Location = new System.Drawing.Point(127, 122);
-			this.deleteButton.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+			this.deleteButton.Location = new System.Drawing.Point(244, 153);
+			this.deleteButton.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
 			this.deleteButton.Name = "deleteButton";
-			this.deleteButton.Size = new System.Drawing.Size(90, 36);
+			this.deleteButton.Size = new System.Drawing.Size(88, 42);
 			this.deleteButton.TabIndex = 4;
 			this.deleteButton.Text = "刪除";
 			this.deleteButton.UseVisualStyleBackColor = true;
@@ -82,18 +84,40 @@
 			// 
 			this.errorProvider1.ContainerControl = this;
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(25, 54);
+			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(57, 25);
+			this.label1.TabIndex = 6;
+			this.label1.Text = "流域:";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(25, 104);
+			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(57, 25);
+			this.label2.TabIndex = 6;
+			this.label2.Text = "樣區:";
+			// 
 			// EditSampleAreaForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(350, 194);
+			this.ClientSize = new System.Drawing.Size(504, 221);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.WatershedIdComboBox);
 			this.Controls.Add(this.areaNameTextBox);
 			this.Controls.Add(this.deleteButton);
 			this.Controls.Add(this.updateButton);
-			this.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "EditSampleAreaForm";
@@ -112,5 +136,7 @@
 		private System.Windows.Forms.Button updateButton;
 		private System.Windows.Forms.Button deleteButton;
 		private System.Windows.Forms.ErrorProvider errorProvider1;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label1;
 	}
 }

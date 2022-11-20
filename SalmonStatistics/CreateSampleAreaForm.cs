@@ -47,7 +47,7 @@ namespace SalmonStatistics
 				{"AreaName",areaNameTextBox }
 			};
 
-			bool isValid = ValidationHelper.Vaildate(model, map, errorProvider1);
+			bool isValid = ValidationHelper.Validate(model, map, errorProvider1);
 			if (!isValid) return;
 
 			SampleAreaDTO dTO = model.ToDTO(); 

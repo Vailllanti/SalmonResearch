@@ -42,20 +42,20 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(34, 99);
+			this.label2.Location = new System.Drawing.Point(21, 99);
 			this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(78, 21);
+			this.label2.Size = new System.Drawing.Size(97, 25);
 			this.label2.TabIndex = 8;
 			this.label2.Text = "參考資料:";
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(47, 46);
+			this.label1.Location = new System.Drawing.Point(34, 46);
 			this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(46, 21);
+			this.label1.Size = new System.Drawing.Size(57, 25);
 			this.label1.TabIndex = 9;
 			this.label1.Text = "種名:";
 			// 
@@ -65,7 +65,7 @@
 			this.referencesTextBox.Location = new System.Drawing.Point(129, 96);
 			this.referencesTextBox.Margin = new System.Windows.Forms.Padding(12);
 			this.referencesTextBox.Name = "referencesTextBox";
-			this.referencesTextBox.Size = new System.Drawing.Size(340, 29);
+			this.referencesTextBox.Size = new System.Drawing.Size(340, 34);
 			this.referencesTextBox.TabIndex = 6;
 			// 
 			// speciesTextBox
@@ -74,7 +74,7 @@
 			this.speciesTextBox.Location = new System.Drawing.Point(129, 43);
 			this.speciesTextBox.Margin = new System.Windows.Forms.Padding(12);
 			this.speciesTextBox.Name = "speciesTextBox";
-			this.speciesTextBox.Size = new System.Drawing.Size(340, 29);
+			this.speciesTextBox.Size = new System.Drawing.Size(340, 34);
 			this.speciesTextBox.TabIndex = 5;
 			// 
 			// saveButton
@@ -105,7 +105,7 @@
 			// 
 			// EditSpeciesForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(503, 208);
 			this.Controls.Add(this.label2);

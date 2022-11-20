@@ -41,15 +41,15 @@
 			// speciesTextBox
 			// 
 			this.speciesTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-			this.speciesTextBox.Location = new System.Drawing.Point(100, 61);
+			this.speciesTextBox.Location = new System.Drawing.Point(112, 61);
 			this.speciesTextBox.Margin = new System.Windows.Forms.Padding(7);
 			this.speciesTextBox.Name = "speciesTextBox";
-			this.speciesTextBox.Size = new System.Drawing.Size(330, 29);
+			this.speciesTextBox.Size = new System.Drawing.Size(330, 34);
 			this.speciesTextBox.TabIndex = 0;
 			// 
 			// saveButton
 			// 
-			this.saveButton.Location = new System.Drawing.Point(356, 158);
+			this.saveButton.Location = new System.Drawing.Point(368, 158);
 			this.saveButton.Margin = new System.Windows.Forms.Padding(7);
 			this.saveButton.Name = "saveButton";
 			this.saveButton.Size = new System.Drawing.Size(74, 43);
@@ -63,17 +63,17 @@
 			this.label1.AutoSize = true;
 			this.label1.Location = new System.Drawing.Point(27, 64);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(46, 21);
+			this.label1.Size = new System.Drawing.Size(57, 25);
 			this.label1.TabIndex = 4;
 			this.label1.Text = "種名:";
 			// 
 			// referencesTextBox
 			// 
 			this.referencesTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-			this.referencesTextBox.Location = new System.Drawing.Point(100, 104);
+			this.referencesTextBox.Location = new System.Drawing.Point(112, 104);
 			this.referencesTextBox.Margin = new System.Windows.Forms.Padding(7);
 			this.referencesTextBox.Name = "referencesTextBox";
-			this.referencesTextBox.Size = new System.Drawing.Size(330, 29);
+			this.referencesTextBox.Size = new System.Drawing.Size(330, 34);
 			this.referencesTextBox.TabIndex = 1;
 			// 
 			// label2
@@ -81,7 +81,7 @@
 			this.label2.AutoSize = true;
 			this.label2.Location = new System.Drawing.Point(12, 112);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(78, 21);
+			this.label2.Size = new System.Drawing.Size(97, 25);
 			this.label2.TabIndex = 4;
 			this.label2.Text = "參考資料:";
 			// 
@@ -91,7 +91,7 @@
 			// 
 			// CreateSpeciesForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(463, 239);
 			this.Controls.Add(this.label2);

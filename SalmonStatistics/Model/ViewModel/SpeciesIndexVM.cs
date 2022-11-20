@@ -23,7 +23,8 @@ namespace SalmonStatistics.Model.ViewModel
 
 		[Required(ErrorMessage = "物種學名必填")]
 		public string Species { get; set; }
-		//[Required]
+
+		[Url(ErrorMessage ="請輸入正確的網址格式")]
 		public string ReferencesUrl { get; set; }
 	}
 

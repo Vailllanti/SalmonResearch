@@ -34,16 +34,18 @@
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
 			this.WatershedIdComboBox = new System.Windows.Forms.ComboBox();
 			this.watershedIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.label2 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.watershedIndexVMBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// saveButton
 			// 
-			this.saveButton.Location = new System.Drawing.Point(216, 134);
-			this.saveButton.Margin = new System.Windows.Forms.Padding(5);
+			this.saveButton.Location = new System.Drawing.Point(340, 132);
+			this.saveButton.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
 			this.saveButton.Name = "saveButton";
-			this.saveButton.Size = new System.Drawing.Size(81, 26);
+			this.saveButton.Size = new System.Drawing.Size(83, 34);
 			this.saveButton.TabIndex = 1;
 			this.saveButton.Text = "保存";
 			this.saveButton.UseVisualStyleBackColor = true;
@@ -51,10 +53,10 @@
 			// 
 			// areaNameTextBox
 			// 
-			this.areaNameTextBox.Location = new System.Drawing.Point(44, 81);
-			this.areaNameTextBox.Margin = new System.Windows.Forms.Padding(5);
+			this.areaNameTextBox.Location = new System.Drawing.Point(87, 83);
+			this.areaNameTextBox.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
 			this.areaNameTextBox.Name = "areaNameTextBox";
-			this.areaNameTextBox.Size = new System.Drawing.Size(252, 23);
+			this.areaNameTextBox.Size = new System.Drawing.Size(335, 34);
 			this.areaNameTextBox.TabIndex = 0;
 			// 
 			// errorProvider1
@@ -66,10 +68,10 @@
 			this.WatershedIdComboBox.DataSource = this.watershedIndexVMBindingSource;
 			this.WatershedIdComboBox.DisplayMember = "RiverName";
 			this.WatershedIdComboBox.FormattingEnabled = true;
-			this.WatershedIdComboBox.Location = new System.Drawing.Point(44, 32);
-			this.WatershedIdComboBox.Margin = new System.Windows.Forms.Padding(4);
+			this.WatershedIdComboBox.Location = new System.Drawing.Point(87, 36);
+			this.WatershedIdComboBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
 			this.WatershedIdComboBox.Name = "WatershedIdComboBox";
-			this.WatershedIdComboBox.Size = new System.Drawing.Size(252, 24);
+			this.WatershedIdComboBox.Size = new System.Drawing.Size(335, 33);
 			this.WatershedIdComboBox.TabIndex = 2;
 			this.WatershedIdComboBox.ValueMember = "Id";
 			// 
@@ -77,17 +79,39 @@
 			// 
 			this.watershedIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.WatershedIndexVM);
 			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(16, 87);
+			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(57, 25);
+			this.label2.TabIndex = 7;
+			this.label2.Text = "樣區:";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(16, 39);
+			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(57, 25);
+			this.label1.TabIndex = 8;
+			this.label1.Text = "流域:";
+			// 
 			// CreateSampleAreaForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(340, 205);
+			this.ClientSize = new System.Drawing.Size(453, 189);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.WatershedIdComboBox);
 			this.Controls.Add(this.areaNameTextBox);
 			this.Controls.Add(this.saveButton);
-			this.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-			this.Margin = new System.Windows.Forms.Padding(4);
+			this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "CreateSampleAreaForm";
@@ -106,5 +130,7 @@
 		private System.Windows.Forms.ErrorProvider errorProvider1;
 		private System.Windows.Forms.ComboBox WatershedIdComboBox;
 		private System.Windows.Forms.BindingSource watershedIndexVMBindingSource;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label1;
 	}
 }

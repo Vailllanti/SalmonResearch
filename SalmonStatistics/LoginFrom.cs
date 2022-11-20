@@ -1,5 +1,4 @@
 ﻿using SalmonStatistics.Infra.Extenstions;
-using SalmonStatistics.Model.DTOs;
 using SalmonStatistics.Model.Services;
 using SalmonStatistics.Model.ViewModel;
 using System;
@@ -14,40 +13,45 @@ using System.Windows.Forms;
 
 namespace SalmonStatistics
 {
-	public partial class CreateWatershedForm : Form
+	public partial class LoginFrom : Form
 	{
-		public CreateWatershedForm()
+		public LoginFrom()
 		{
 			InitializeComponent();
 		}
 
-		private void saveButton_Click(object sender, EventArgs e)
+		private void loginButton_Click(object sender, EventArgs e)
 		{
-			string riverName = riverTextBox.Text;
-
-			WatershedVM model = new WatershedVM()
+			LoginVM model = new LoginVM
 			{
-				RiverName = riverName,
+				Account = accountTextBox.Text,
+				Password = passwordTextBox.Text
 			};
 
 			Dictionary<string, Control> map = new Dictionary<string, Control>(StringComparer.CurrentCultureIgnoreCase)
 			{
-				{"RiverName",riverTextBox }
+				{"Account", accountTextBox},
+				{"Password", passwordTextBox},
 			};
 
 			bool isValid = ValidationHelper.Validate(model, map, errorProvider1);
 			if (!isValid) return;
 
-			WatershedDTO dTO = model.ToDTO();
-			try
+			bool result = new UserService().Authenticate(model);
+			if (result == false)
 			{
-				new WatershedService().Create(dTO);
-				this.DialogResult = DialogResult.OK;
+				MessageBox.Show("帳號或密碼錯誤");
+				return;
 			}
-			catch(Exception ex)
-			{
-				MessageBox.Show("新增失敗，原因: " + ex.Message);
-			}
+
+			accountTextBox.Text = String.Empty;
+			passwordTextBox.Text = String.Empty;
+
+			var frm = new MainForm();
+			frm.Owner = this;
+
+			frm.Show();
+			this.Hide();
 		}
 	}
 }

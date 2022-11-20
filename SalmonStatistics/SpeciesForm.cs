@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -45,7 +46,12 @@ namespace SalmonStatistics
 		{
 			int rowIndex = e.RowIndex;
 			if (rowIndex < 0) return;
-
+			if (dataGridView1.Columns[e.ColumnIndex] is DataGridViewLinkColumn)
+			{
+				string url = dataGridView1.Rows[e.RowIndex].Cells["ReferencesUrl"].Value.ToString();
+				System.Diagnostics.Process.Start(url);
+				return;
+			}
 			SpeciesIndexVM row = this.species[rowIndex];
 			int id = row.Id;
 
