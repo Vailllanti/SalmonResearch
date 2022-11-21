@@ -1,4 +1,7 @@
-﻿using System;
+﻿using SalmonStatistics.Infra.DAOs;
+using SalmonStatistics.Model.DTOs;
+using SalmonStatistics.Model.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +15,16 @@ namespace SalmonStatistics
 {
 	public partial class MainForm : Form
 	{
-		public MainForm()
+		public string Account { set { account = value; } }
+		private string account;
+
+		public void SetValue()
 		{
+			this.welcomeLabel.Text = $"Welcome,{account}";
+		}
+
+		public MainForm()
+		{ 
 			InitializeComponent();
 		}
 
@@ -36,8 +47,8 @@ namespace SalmonStatistics
 
 		private void CloseButton_Click(object sender, EventArgs e)
 		{
-			this.Close();
 			this.Owner.Show();
+			this.Close();
 		}
 
 		private void watershedButton_Click(object sender, EventArgs e)
@@ -85,5 +96,28 @@ namespace SalmonStatistics
 			if (this.WindowState == FormWindowState.Maximized) this.WindowState = FormWindowState.Normal;
 			else this.WindowState = FormWindowState.Maximized;                  
 		}
+		#region 拖曳元件
+		private int curr_x=0,curr_y=0;
+		private bool isWndMove;
+		private void upPanel_MouseDown(object sender, MouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Left)
+			{
+				this.curr_x = e.X;
+				this.curr_y = e.Y;
+				this.isWndMove = true;
+			}
+		}
+		private void upPanel_MouseMove(object sender, MouseEventArgs e)
+		{
+			if (this.isWndMove)
+				this.Location = new Point(this.Left + e.X - this.curr_x, this.Top + e.Y - this.curr_y);
+		}
+
+		private void upPanel_MouseUp(object sender, MouseEventArgs e)
+		{
+			this.isWndMove = false;
+		}
+		#endregion
 	}
 }

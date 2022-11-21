@@ -34,12 +34,12 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.AddButton = new System.Windows.Forms.Button();
+			this.usersIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.userVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.accountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.usersIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.AddButton = new System.Windows.Forms.Button();
-			this.userVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.usersIndexVMBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userVMBindingSource)).BeginInit();
@@ -54,7 +54,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.dataGridView1.AutoGenerateColumns = false;
 			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+			this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkGray;
 			this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -83,48 +83,6 @@
 			this.dataGridView1.TabIndex = 3;
 			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
 			// 
-			// idDataGridViewTextBoxColumn
-			// 
-			this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-			this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-			this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-			this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-			this.idDataGridViewTextBoxColumn.ReadOnly = true;
-			this.idDataGridViewTextBoxColumn.Width = 60;
-			// 
-			// accountDataGridViewTextBoxColumn
-			// 
-			this.accountDataGridViewTextBoxColumn.DataPropertyName = "Account";
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGray;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-			this.accountDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-			this.accountDataGridViewTextBoxColumn.HeaderText = "帳戶";
-			this.accountDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.accountDataGridViewTextBoxColumn.Name = "accountDataGridViewTextBoxColumn";
-			this.accountDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// nameDataGridViewTextBoxColumn
-			// 
-			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-			this.nameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-			this.nameDataGridViewTextBoxColumn.HeaderText = "姓名";
-			this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-			this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// usersIndexVMBindingSource
-			// 
-			this.usersIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.UsersIndexVM);
-			// 
 			// AddButton
 			// 
 			this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -141,13 +99,60 @@
 			this.AddButton.UseVisualStyleBackColor = false;
 			this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
 			// 
+			// usersIndexVMBindingSource
+			// 
+			this.usersIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.UsersIndexVM);
+			// 
 			// userVMBindingSource
 			// 
 			this.userVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.UserVM);
 			// 
+			// idDataGridViewTextBoxColumn
+			// 
+			this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+			this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+			this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+			this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+			this.idDataGridViewTextBoxColumn.ReadOnly = true;
+			this.idDataGridViewTextBoxColumn.Width = 50;
+			// 
+			// accountDataGridViewTextBoxColumn
+			// 
+			this.accountDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.accountDataGridViewTextBoxColumn.DataPropertyName = "Account";
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGray;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+			this.accountDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+			this.accountDataGridViewTextBoxColumn.HeaderText = "帳戶";
+			this.accountDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.accountDataGridViewTextBoxColumn.Name = "accountDataGridViewTextBoxColumn";
+			this.accountDataGridViewTextBoxColumn.ReadOnly = true;
+			this.accountDataGridViewTextBoxColumn.Width = 67;
+			// 
+			// nameDataGridViewTextBoxColumn
+			// 
+			this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+			this.nameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+			this.nameDataGridViewTextBoxColumn.HeaderText = "姓名";
+			this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+			this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+			this.nameDataGridViewTextBoxColumn.Width = 172;
+			// 
 			// UsersForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DarkGray;
 			this.ClientSize = new System.Drawing.Size(418, 382);

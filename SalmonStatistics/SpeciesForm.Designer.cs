@@ -31,17 +31,17 @@
 			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.AddButton = new System.Windows.Forms.Button();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ReferencesUrl = new System.Windows.Forms.DataGridViewLinkColumn();
-			this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.speciesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.speciesIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.watershedIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.speciesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ReferencesUrl = new System.Windows.Forms.DataGridViewLinkColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.speciesIndexVMBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.watershedIndexVMBindingSource)).BeginInit();
@@ -74,7 +74,7 @@
 			this.dataGridView1.AutoGenerateColumns = false;
 			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-			this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+			this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkGray;
 			this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -118,6 +118,44 @@
 			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
 			this.idDataGridViewTextBoxColumn.Width = 40;
 			// 
+			// speciesIndexVMBindingSource
+			// 
+			this.speciesIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.SpeciesIndexVM);
+			// 
+			// watershedIndexVMBindingSource
+			// 
+			this.watershedIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.WatershedIndexVM);
+			// 
+			// idDataGridViewTextBoxColumn1
+			// 
+			this.idDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+			this.idDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
+			this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+			this.idDataGridViewTextBoxColumn1.MinimumWidth = 6;
+			this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+			this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+			this.idDataGridViewTextBoxColumn1.Width = 50;
+			// 
+			// speciesDataGridViewTextBoxColumn
+			// 
+			this.speciesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.speciesDataGridViewTextBoxColumn.DataPropertyName = "Species";
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGray;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+			this.speciesDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+			this.speciesDataGridViewTextBoxColumn.HeaderText = "種名";
+			this.speciesDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.speciesDataGridViewTextBoxColumn.Name = "speciesDataGridViewTextBoxColumn";
+			this.speciesDataGridViewTextBoxColumn.ReadOnly = true;
+			this.speciesDataGridViewTextBoxColumn.Width = 67;
+			// 
 			// ReferencesUrl
 			// 
 			this.ReferencesUrl.DataPropertyName = "ReferencesUrl";
@@ -132,44 +170,9 @@
 			this.ReferencesUrl.Resizable = System.Windows.Forms.DataGridViewTriState.True;
 			this.ReferencesUrl.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
 			// 
-			// idDataGridViewTextBoxColumn1
-			// 
-			this.idDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-			this.idDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
-			this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-			this.idDataGridViewTextBoxColumn1.MinimumWidth = 6;
-			this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-			this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-			this.idDataGridViewTextBoxColumn1.Width = 60;
-			// 
-			// speciesDataGridViewTextBoxColumn
-			// 
-			this.speciesDataGridViewTextBoxColumn.DataPropertyName = "Species";
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGray;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-			this.speciesDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-			this.speciesDataGridViewTextBoxColumn.HeaderText = "種名";
-			this.speciesDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.speciesDataGridViewTextBoxColumn.Name = "speciesDataGridViewTextBoxColumn";
-			this.speciesDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// speciesIndexVMBindingSource
-			// 
-			this.speciesIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.SpeciesIndexVM);
-			// 
-			// watershedIndexVMBindingSource
-			// 
-			this.watershedIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.WatershedIndexVM);
-			// 
 			// SpeciesForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DarkGray;
 			this.ClientSize = new System.Drawing.Size(890, 655);

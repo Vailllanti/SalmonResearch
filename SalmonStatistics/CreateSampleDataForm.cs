@@ -19,14 +19,6 @@ namespace SalmonStatistics
 	{
 		private List<SampleAreaVM> areaName;
 
-		//private SampleAreaDAO Refresh()
-		//{
-
-		//	return new SampleAreaDAO()
-		//	   .GetAll(((WatershedVM)watershedComboBox.SelectedItem).Id).
-		//	   Select(dto => dto.ToVM()).ToList(); ;
-		//}
-
 		public CreateSampleDataForm()
 		{
 			InitializeComponent();
@@ -64,9 +56,9 @@ namespace SalmonStatistics
 			int sampleAreaId =((SampleAreaVM)areaNameComboBox.SelectedItem).Id;
 			string samplingDate = samplingDateTextBox.Text;
 			int speciesId = ((SpeciesVM)speciesComboBox.SelectedItem).Id;
-			string adultNum = AdultNumTextBox.Text;
-			string subadultNum = SubadultNumTextBox.Text;
-			string JuvenileNum = JuvenileNumTextBox.Text;
+			string adultNum = String.IsNullOrEmpty(sumAdultTextBox.Text) ? AdultNumTextBox.Text : sumAdultTextBox.Text;
+			string subadultNum = String.IsNullOrEmpty(sumSubadultTextBox.Text) ? SubadultNumTextBox.Text : sumSubadultTextBox.Text;
+			string JuvenileNum = String.IsNullOrEmpty(sumJuvenileTextBox.Text) ? JuvenileNumTextBox.Text : sumJuvenileTextBox.Text;
 
 			SampleDataVM model = new SampleDataVM()
 			{
@@ -94,12 +86,66 @@ namespace SalmonStatistics
 			try
 			{
 				new SampleDataService().Create(dTO);
-				this.DialogResult = DialogResult.OK;
+				//this.DialogResult = DialogResult.OK;
+				//SampleDataForm parentForm = (SampleDataForm)this.Owner;
+				//parentForm.Reset();
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show("新增失敗，原因: " + ex.Message);
 			}
 		}
+
+		private void CloseButton_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void accumulateButton_Click(object sender, EventArgs e)
+		{
+			preAdultTextBox.Text = AdultNumTextBox.Text;
+			preSubadultTextBox.Text = SubadultNumTextBox.Text;
+			preJuvenileTextBox.Text = JuvenileNumTextBox.Text;
+
+			sumAdultTextBox.Text = (sumAdultTextBox.Text.ToInt(0) + AdultNumTextBox.Text.ToInt(0)).ToString();
+			sumSubadultTextBox.Text = (sumSubadultTextBox.Text.ToInt(0) + SubadultNumTextBox.Text.ToInt(0)).ToString();
+			sumJuvenileTextBox.Text = (sumJuvenileTextBox.Text.ToInt(0) + JuvenileNumTextBox.Text.ToInt(0)).ToString();
+
+			AdultNumTextBox.Clear();
+			SubadultNumTextBox.Clear();
+			JuvenileNumTextBox.Clear();
+		}
+
+		#region 拖曳元件
+		private int curr_x = 0, curr_y = 0;
+		private bool isWndMove;
+
+		private void upPanel_MouseDown(object sender, MouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Left)
+			{
+				this.curr_x = e.X;
+				this.curr_y = e.Y;
+				this.isWndMove = true;
+			}
+		}
+
+		private void upPanel_MouseMove(object sender, MouseEventArgs e)
+		{
+			if (this.isWndMove)
+				this.Location = new Point(this.Left + e.X - this.curr_x, this.Top + e.Y - this.curr_y);
+		}
+
+		private void samplingDateTextBox_MouseClick(object sender, MouseEventArgs e)
+		{
+			samplingDateTextBox.Clear();
+		}
+
+
+		private void upPanel_MouseUp(object sender, MouseEventArgs e)
+		{
+			this.isWndMove = false;
+		}
+		#endregion
 	}
 }

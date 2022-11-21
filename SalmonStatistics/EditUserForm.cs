@@ -23,6 +23,7 @@ namespace SalmonStatistics
 			InitializeComponent();
 			this.id = id;
 		}
+
 		private void EditUserForm_Load(object sender, EventArgs e)
 		{
 			BindData(id);
@@ -82,6 +83,35 @@ namespace SalmonStatistics
 			new UserService().Delete(id);
 
 			this.DialogResult = DialogResult.OK;
+		}
+
+		private void CloseButton_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private int curr_x = 0, curr_y = 0;
+		private bool isWndMove;
+
+		private void upPanel_MouseDown(object sender, MouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Left)
+			{
+				this.curr_x = e.X;
+				this.curr_y = e.Y;
+				this.isWndMove = true;
+			}
+		}
+
+		private void upPanel_MouseMove(object sender, MouseEventArgs e)
+		{
+			if (this.isWndMove)
+				this.Location = new Point(this.Left + e.X - this.curr_x, this.Top + e.Y - this.curr_y);
+		}
+
+		private void upPanel_MouseUp(object sender, MouseEventArgs e)
+		{
+			this.isWndMove = false;
 		}
 	}
 }

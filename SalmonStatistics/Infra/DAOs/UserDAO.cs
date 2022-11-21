@@ -133,5 +133,6 @@ namespace SalmonStatistics.Infra.DAOs
 				Name = row.Field<string>("Name"),
 			};
 		}
+
 	}
 }

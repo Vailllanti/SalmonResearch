@@ -36,15 +36,15 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.CloseButton = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
+			this.CloseButton = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// loginButton
 			// 
-			this.loginButton.Location = new System.Drawing.Point(244, 172);
+			this.loginButton.Location = new System.Drawing.Point(246, 146);
 			this.loginButton.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
 			this.loginButton.Name = "loginButton";
 			this.loginButton.Size = new System.Drawing.Size(74, 38);
@@ -55,40 +55,40 @@
 			// 
 			// passwordTextBox
 			// 
-			this.passwordTextBox.Location = new System.Drawing.Point(87, 124);
+			this.passwordTextBox.Location = new System.Drawing.Point(89, 103);
 			this.passwordTextBox.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
 			this.passwordTextBox.Name = "passwordTextBox";
 			this.passwordTextBox.PasswordChar = '*';
-			this.passwordTextBox.Size = new System.Drawing.Size(231, 34);
+			this.passwordTextBox.Size = new System.Drawing.Size(231, 29);
 			this.passwordTextBox.TabIndex = 1;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
 			this.label2.ForeColor = System.Drawing.Color.White;
-			this.label2.Location = new System.Drawing.Point(24, 127);
+			this.label2.Location = new System.Drawing.Point(26, 106);
 			this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(57, 25);
+			this.label2.Size = new System.Drawing.Size(46, 21);
 			this.label2.TabIndex = 11;
 			this.label2.Text = "密碼:";
 			// 
 			// accountTextBox
 			// 
-			this.accountTextBox.Location = new System.Drawing.Point(87, 66);
+			this.accountTextBox.Location = new System.Drawing.Point(89, 60);
 			this.accountTextBox.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
 			this.accountTextBox.Name = "accountTextBox";
-			this.accountTextBox.Size = new System.Drawing.Size(231, 34);
+			this.accountTextBox.Size = new System.Drawing.Size(231, 29);
 			this.accountTextBox.TabIndex = 0;
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
 			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(24, 69);
+			this.label1.Location = new System.Drawing.Point(26, 63);
 			this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(57, 25);
+			this.label1.Size = new System.Drawing.Size(46, 21);
 			this.label1.TabIndex = 12;
 			this.label1.Text = "帳號:";
 			// 
@@ -104,8 +104,23 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(353, 31);
+			this.panel1.Size = new System.Drawing.Size(353, 30);
 			this.panel1.TabIndex = 13;
+			this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.upPanel_MouseDown);
+			this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.upPanel_MouseMove);
+			this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.upPanel_MouseUp);
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+			this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.label3.Location = new System.Drawing.Point(3, 6);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(74, 21);
+			this.label3.TabIndex = 14;
+			this.label3.Text = "登入系統";
 			// 
 			// CloseButton
 			// 
@@ -122,25 +137,15 @@
 			this.CloseButton.TabIndex = 14;
 			this.CloseButton.Text = "X";
 			this.CloseButton.UseVisualStyleBackColor = false;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-			this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.label3.Location = new System.Drawing.Point(3, 4);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(92, 25);
-			this.label3.TabIndex = 14;
-			this.label3.Text = "登入系統";
+			this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
 			// 
 			// LoginFrom
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+			this.AllowDrop = true;
+			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DimGray;
-			this.ClientSize = new System.Drawing.Size(353, 229);
+			this.ClientSize = new System.Drawing.Size(353, 205);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.loginButton);
 			this.Controls.Add(this.passwordTextBox);

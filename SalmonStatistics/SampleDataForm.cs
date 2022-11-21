@@ -76,5 +76,9 @@ namespace SalmonStatistics
 		{
 			DisplaySampleData();
 		}
+		public void Reset()
+		{
+			DisplaySampleData();
+		}
 	}
 }

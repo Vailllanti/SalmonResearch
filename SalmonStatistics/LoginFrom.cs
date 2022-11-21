@@ -48,10 +48,43 @@ namespace SalmonStatistics
 			passwordTextBox.Text = String.Empty;
 
 			var frm = new MainForm();
+			frm.Account = model.Account;
+			
 			frm.Owner = this;
 
 			frm.Show();
+			frm.SetValue();
 			this.Hide();
+		}
+
+		private void CloseButton_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+
+		private int curr_x = 0, curr_y = 0;
+		private bool isWndMove;
+
+		private void upPanel_MouseDown(object sender, MouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Left)
+			{
+				this.curr_x = e.X;
+				this.curr_y = e.Y;
+				this.isWndMove = true;
+			}
+		}
+
+		private void upPanel_MouseMove(object sender, MouseEventArgs e)
+		{
+			if (this.isWndMove)
+				this.Location = new Point(this.Left + e.X - this.curr_x, this.Top + e.Y - this.curr_y);
+		}
+
+		private void upPanel_MouseUp(object sender, MouseEventArgs e)
+		{
+			this.isWndMove = false;
 		}
 	}
 }
