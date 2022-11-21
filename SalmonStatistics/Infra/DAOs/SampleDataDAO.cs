@@ -22,13 +22,13 @@ namespace SalmonStatistics.Infra.DAOs
 
 			SqlParameter[] parameters = new SqlParameter[] { };
 
-			int SampleAreaId = id;
+			int WatershedId = id;
 
-			if (SampleAreaId > 0)
+			if (WatershedId > 0)
 			{
-				sql += " where SampleAreaId = @SampleAreaId";
+				sql += " where WatershedId = @WatershedId";
 				parameters = new SqlParameterBulider()
-					.AddInt("SampleAreaId", SampleAreaId)
+					.AddInt("WatershedId", WatershedId)
 					.Build();
 			}
 

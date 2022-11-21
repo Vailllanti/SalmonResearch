@@ -18,11 +18,12 @@ namespace SalmonStatistics
 	public partial class CreateSampleDataForm : Form
 	{
 		private List<SampleAreaVM> areaName;
-
-		public CreateSampleDataForm()
+		private SampleDataForm sampleDataForm;
+		public CreateSampleDataForm(SampleDataForm frm)
 		{
 			InitializeComponent();
 			InitForm();
+			sampleDataForm = frm;
 		}
 		private void InitForm()
 		{
@@ -53,6 +54,7 @@ namespace SalmonStatistics
 
 		private void saveButton_Click(object sender, EventArgs e)
 		{
+			int watershedId = ((WatershedVM)watershedComboBox.SelectedItem).Id;
 			int sampleAreaId =((SampleAreaVM)areaNameComboBox.SelectedItem).Id;
 			string samplingDate = samplingDateTextBox.Text;
 			int speciesId = ((SpeciesVM)speciesComboBox.SelectedItem).Id;
@@ -94,6 +96,16 @@ namespace SalmonStatistics
 			{
 				MessageBox.Show("新增失敗，原因: " + ex.Message);
 			}
+			AdultNumTextBox.Clear();
+			SubadultNumTextBox.Clear();
+			JuvenileNumTextBox.Clear();
+			sumAdultTextBox.Clear();
+			sumSubadultTextBox.Clear();
+			sumJuvenileTextBox.Clear();
+			preAdultTextBox.Clear();
+			preSubadultTextBox.Clear();
+			preJuvenileTextBox.Clear();
+			sampleDataForm.Reflash(watershedId);
 		}
 
 		private void CloseButton_Click(object sender, EventArgs e)

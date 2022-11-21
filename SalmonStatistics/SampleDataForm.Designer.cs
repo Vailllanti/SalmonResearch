@@ -38,13 +38,7 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.watershedComboBox = new System.Windows.Forms.ComboBox();
 			this.watershedIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.searchButton = new System.Windows.Forms.Button();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.sampleDataIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.addButton = new System.Windows.Forms.Button();
-			this.speciesIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.sampleAreaIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.sampleDataIndexVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.SampleArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.SpeciesName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +46,11 @@
 			this.SubadultNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.JuvenileNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.SamplingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.sampleDataIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.addButton = new System.Windows.Forms.Button();
+			this.speciesIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.sampleAreaIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.sampleDataIndexVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.watershedIndexVMBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.sampleDataIndexVMBindingSource)).BeginInit();
@@ -68,29 +67,14 @@
 			this.watershedComboBox.Location = new System.Drawing.Point(20, 18);
 			this.watershedComboBox.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
 			this.watershedComboBox.Name = "watershedComboBox";
-			this.watershedComboBox.Size = new System.Drawing.Size(233, 29);
+			this.watershedComboBox.Size = new System.Drawing.Size(233, 33);
 			this.watershedComboBox.TabIndex = 8;
 			this.watershedComboBox.ValueMember = "Id";
+			this.watershedComboBox.SelectionChangeCommitted += new System.EventHandler(this.watershedComboBox_SelectionChangeCommitted);
 			// 
 			// watershedIndexVMBindingSource
 			// 
 			this.watershedIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.WatershedIndexVM);
-			// 
-			// searchButton
-			// 
-			this.searchButton.BackColor = System.Drawing.Color.White;
-			this.searchButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-			this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.searchButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-			this.searchButton.ForeColor = System.Drawing.Color.Black;
-			this.searchButton.Location = new System.Drawing.Point(262, 14);
-			this.searchButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
-			this.searchButton.Name = "searchButton";
-			this.searchButton.Size = new System.Drawing.Size(74, 38);
-			this.searchButton.TabIndex = 5;
-			this.searchButton.Text = "搜尋";
-			this.searchButton.UseVisualStyleBackColor = false;
-			this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
 			// 
 			// dataGridView1
 			// 
@@ -128,6 +112,115 @@
 			this.dataGridView1.TabIndex = 7;
 			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
 			// 
+			// idDataGridViewTextBoxColumn
+			// 
+			this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+			this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+			this.idDataGridViewTextBoxColumn.FillWeight = 74.86631F;
+			this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+			this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+			this.idDataGridViewTextBoxColumn.ReadOnly = true;
+			this.idDataGridViewTextBoxColumn.Width = 60;
+			// 
+			// SampleArea
+			// 
+			this.SampleArea.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.SampleArea.DataPropertyName = "AreaName";
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGray;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+			this.SampleArea.DefaultCellStyle = dataGridViewCellStyle2;
+			this.SampleArea.FillWeight = 104.1889F;
+			this.SampleArea.HeaderText = "樣區";
+			this.SampleArea.MinimumWidth = 6;
+			this.SampleArea.Name = "SampleArea";
+			this.SampleArea.ReadOnly = true;
+			this.SampleArea.Width = 81;
+			// 
+			// SpeciesName
+			// 
+			this.SpeciesName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.SpeciesName.DataPropertyName = "Species";
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+			this.SpeciesName.DefaultCellStyle = dataGridViewCellStyle3;
+			this.SpeciesName.FillWeight = 104.1889F;
+			this.SpeciesName.HeaderText = "物種";
+			this.SpeciesName.MinimumWidth = 6;
+			this.SpeciesName.Name = "SpeciesName";
+			this.SpeciesName.ReadOnly = true;
+			this.SpeciesName.Width = 81;
+			// 
+			// AdultNumber
+			// 
+			this.AdultNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.AdultNumber.DataPropertyName = "AdultNumber";
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray;
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+			this.AdultNumber.DefaultCellStyle = dataGridViewCellStyle4;
+			this.AdultNumber.FillWeight = 104.1889F;
+			this.AdultNumber.HeaderText = "成魚數";
+			this.AdultNumber.MinimumWidth = 6;
+			this.AdultNumber.Name = "AdultNumber";
+			this.AdultNumber.ReadOnly = true;
+			this.AdultNumber.Width = 101;
+			// 
+			// SubadultNumber
+			// 
+			this.SubadultNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.SubadultNumber.DataPropertyName = "SubadultNumber";
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkGray;
+			this.SubadultNumber.DefaultCellStyle = dataGridViewCellStyle5;
+			this.SubadultNumber.FillWeight = 104.1889F;
+			this.SubadultNumber.HeaderText = "亞成魚數";
+			this.SubadultNumber.MinimumWidth = 6;
+			this.SubadultNumber.Name = "SubadultNumber";
+			this.SubadultNumber.ReadOnly = true;
+			this.SubadultNumber.Width = 121;
+			// 
+			// JuvenileNumber
+			// 
+			this.JuvenileNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.JuvenileNumber.DataPropertyName = "JuvenileNumber";
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkGray;
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+			this.JuvenileNumber.DefaultCellStyle = dataGridViewCellStyle6;
+			this.JuvenileNumber.FillWeight = 104.1889F;
+			this.JuvenileNumber.HeaderText = "稚魚數";
+			this.JuvenileNumber.MinimumWidth = 6;
+			this.JuvenileNumber.Name = "JuvenileNumber";
+			this.JuvenileNumber.ReadOnly = true;
+			this.JuvenileNumber.Width = 101;
+			// 
+			// SamplingDate
+			// 
+			this.SamplingDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.SamplingDate.DataPropertyName = "SamplingDate";
+			dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkGray;
+			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+			this.SamplingDate.DefaultCellStyle = dataGridViewCellStyle7;
+			this.SamplingDate.FillWeight = 104.1889F;
+			this.SamplingDate.HeaderText = "採樣時間";
+			this.SamplingDate.MinimumWidth = 6;
+			this.SamplingDate.Name = "SamplingDate";
+			this.SamplingDate.ReadOnly = true;
+			this.SamplingDate.Width = 121;
+			// 
 			// sampleDataIndexVMBindingSource
 			// 
 			this.sampleDataIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.SampleDataIndexVM);
@@ -161,121 +254,13 @@
 			// 
 			this.sampleDataIndexVMBindingSource1.DataSource = typeof(SalmonStatistics.Model.ViewModel.SampleDataIndexVM);
 			// 
-			// idDataGridViewTextBoxColumn
-			// 
-			this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-			this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-			this.idDataGridViewTextBoxColumn.FillWeight = 74.86631F;
-			this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-			this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-			this.idDataGridViewTextBoxColumn.ReadOnly = true;
-			this.idDataGridViewTextBoxColumn.Width = 50;
-			// 
-			// SampleArea
-			// 
-			this.SampleArea.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.SampleArea.DataPropertyName = "AreaName";
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGray;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-			this.SampleArea.DefaultCellStyle = dataGridViewCellStyle2;
-			this.SampleArea.FillWeight = 104.1889F;
-			this.SampleArea.HeaderText = "樣區";
-			this.SampleArea.MinimumWidth = 6;
-			this.SampleArea.Name = "SampleArea";
-			this.SampleArea.ReadOnly = true;
-			this.SampleArea.Width = 67;
-			// 
-			// SpeciesName
-			// 
-			this.SpeciesName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.SpeciesName.DataPropertyName = "Species";
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-			this.SpeciesName.DefaultCellStyle = dataGridViewCellStyle3;
-			this.SpeciesName.FillWeight = 104.1889F;
-			this.SpeciesName.HeaderText = "物種";
-			this.SpeciesName.MinimumWidth = 6;
-			this.SpeciesName.Name = "SpeciesName";
-			this.SpeciesName.ReadOnly = true;
-			this.SpeciesName.Width = 67;
-			// 
-			// AdultNumber
-			// 
-			this.AdultNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.AdultNumber.DataPropertyName = "AdultNumber";
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray;
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-			this.AdultNumber.DefaultCellStyle = dataGridViewCellStyle4;
-			this.AdultNumber.FillWeight = 104.1889F;
-			this.AdultNumber.HeaderText = "成魚數";
-			this.AdultNumber.MinimumWidth = 6;
-			this.AdultNumber.Name = "AdultNumber";
-			this.AdultNumber.ReadOnly = true;
-			this.AdultNumber.Width = 83;
-			// 
-			// SubadultNumber
-			// 
-			this.SubadultNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.SubadultNumber.DataPropertyName = "SubadultNumber";
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkGray;
-			this.SubadultNumber.DefaultCellStyle = dataGridViewCellStyle5;
-			this.SubadultNumber.FillWeight = 104.1889F;
-			this.SubadultNumber.HeaderText = "亞成魚數";
-			this.SubadultNumber.MinimumWidth = 6;
-			this.SubadultNumber.Name = "SubadultNumber";
-			this.SubadultNumber.ReadOnly = true;
-			this.SubadultNumber.Width = 99;
-			// 
-			// JuvenileNumber
-			// 
-			this.JuvenileNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.JuvenileNumber.DataPropertyName = "JuvenileNumber";
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkGray;
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-			this.JuvenileNumber.DefaultCellStyle = dataGridViewCellStyle6;
-			this.JuvenileNumber.FillWeight = 104.1889F;
-			this.JuvenileNumber.HeaderText = "稚魚數";
-			this.JuvenileNumber.MinimumWidth = 6;
-			this.JuvenileNumber.Name = "JuvenileNumber";
-			this.JuvenileNumber.ReadOnly = true;
-			this.JuvenileNumber.Width = 83;
-			// 
-			// SamplingDate
-			// 
-			this.SamplingDate.DataPropertyName = "SamplingDate";
-			dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkGray;
-			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-			this.SamplingDate.DefaultCellStyle = dataGridViewCellStyle7;
-			this.SamplingDate.FillWeight = 104.1889F;
-			this.SamplingDate.HeaderText = "採樣時間";
-			this.SamplingDate.MinimumWidth = 6;
-			this.SamplingDate.Name = "SamplingDate";
-			this.SamplingDate.ReadOnly = true;
-			// 
 			// SampleDataForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DarkGray;
 			this.ClientSize = new System.Drawing.Size(1133, 661);
 			this.Controls.Add(this.watershedComboBox);
-			this.Controls.Add(this.searchButton);
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.addButton);
 			this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -296,7 +281,6 @@
 		#endregion
 
 		private System.Windows.Forms.ComboBox watershedComboBox;
-		private System.Windows.Forms.Button searchButton;
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.Button addButton;
 		private System.Windows.Forms.BindingSource watershedIndexVMBindingSource;

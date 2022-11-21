@@ -16,7 +16,7 @@ namespace SalmonStatistics
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new LoginFrom());
+			Application.Run(new MainForm());
 		}
 	}
 }

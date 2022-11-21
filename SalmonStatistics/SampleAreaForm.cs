@@ -77,5 +77,10 @@ namespace SalmonStatistics
 		{
 			DisplaySampleArea();
 		}
+
+		private void watershedComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+		{
+			DisplaySampleArea();
+		}
 	}
 }

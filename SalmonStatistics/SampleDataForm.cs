@@ -29,14 +29,14 @@ namespace SalmonStatistics
 			watershedComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
 			var watershed = new WatershedDAO()
-				.GetAll().Prepend(new WatershedDTO { Id = 0, RiverName = String.Empty }).Select(dto => dto.ToIndexVM()).ToList();
+				.GetAll().Prepend(new WatershedDTO { Id = 0, RiverName = String.Empty }).Select(dto => dto.ToVM()).ToList();
 			this.watershedComboBox.DataSource = watershed;
 		}
 
 
 		private void DisplaySampleData()
 		{
-			sampleData = new SampleDataDAO().GetAll(((WatershedIndexVM)watershedComboBox.SelectedItem).Id)
+			sampleData = new SampleDataDAO().GetAll(((WatershedVM)watershedComboBox.SelectedItem).Id)
 						.Select(dto => dto.ToIndexVM()).ToArray();
 			BindData(sampleData);
 		}
@@ -48,7 +48,7 @@ namespace SalmonStatistics
 
 		private void addButton_Click(object sender, EventArgs e)
 		{
-			var frm = new CreateSampleDataForm();
+			var frm = new CreateSampleDataForm(this);
 			DialogResult result = frm.ShowDialog();
 			if (result == DialogResult.OK)
 			{
@@ -72,13 +72,16 @@ namespace SalmonStatistics
 			}
 		}
 
-		private void searchButton_Click(object sender, EventArgs e)
+		private void watershedComboBox_SelectionChangeCommitted(object sender, EventArgs e)
 		{
 			DisplaySampleData();
 		}
-		public void Reset()
+
+		public void Reflash(int id)
 		{
-			DisplaySampleData();
+			sampleData = new SampleDataDAO().GetAll(id).Select(dto => dto.ToIndexVM()).ToArray();
+			watershedComboBox.SelectedItem = id;
+			BindData(sampleData);
 		}
 	}
 }
