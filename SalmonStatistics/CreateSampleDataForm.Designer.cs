@@ -203,6 +203,7 @@
 			// 
 			this.samplingDateTextBox.Location = new System.Drawing.Point(109, 201);
 			this.samplingDateTextBox.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
+			this.samplingDateTextBox.MaxLength = 10;
 			this.samplingDateTextBox.Name = "samplingDateTextBox";
 			this.samplingDateTextBox.Size = new System.Drawing.Size(166, 29);
 			this.samplingDateTextBox.TabIndex = 2;
@@ -298,7 +299,7 @@
 			// accumulateLabel
 			// 
 			this.accumulateLabel.AutoSize = true;
-			this.accumulateLabel.Location = new System.Drawing.Point(104, 22);
+			this.accumulateLabel.Location = new System.Drawing.Point(108, 22);
 			this.accumulateLabel.Name = "accumulateLabel";
 			this.accumulateLabel.Size = new System.Drawing.Size(42, 21);
 			this.accumulateLabel.TabIndex = 15;
@@ -314,6 +315,7 @@
 			this.groupBox1.Controls.Add(this.preSubadultTextBox);
 			this.groupBox1.Controls.Add(this.sumAdultTextBox);
 			this.groupBox1.Controls.Add(this.sumSubadultTextBox);
+			this.groupBox1.ForeColor = System.Drawing.Color.White;
 			this.groupBox1.Location = new System.Drawing.Point(377, 44);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(260, 171);
@@ -324,7 +326,7 @@
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(89, 98);
+			this.label9.Location = new System.Drawing.Point(93, 98);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(74, 21);
 			this.label9.TabIndex = 16;

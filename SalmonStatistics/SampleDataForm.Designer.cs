@@ -38,11 +38,6 @@
 			this.watershedComboBox = new System.Windows.Forms.ComboBox();
 			this.watershedIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.sampleDataIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.addButton = new System.Windows.Forms.Button();
-			this.speciesIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.sampleAreaIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.sampleDataIndexVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.SampleArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.SpeciesName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +45,11 @@
 			this.SubadultNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.JuvenileNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.SamplingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.sampleDataIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.addButton = new System.Windows.Forms.Button();
+			this.speciesIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.sampleAreaIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.sampleDataIndexVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.watershedIndexVMBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.sampleDataIndexVMBindingSource)).BeginInit();
@@ -111,39 +111,6 @@
 			this.dataGridView1.TabIndex = 7;
 			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
 			// 
-			// sampleDataIndexVMBindingSource
-			// 
-			this.sampleDataIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.SampleDataIndexVM);
-			// 
-			// addButton
-			// 
-			this.addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.addButton.BackColor = System.Drawing.Color.White;
-			this.addButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-			this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.addButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-			this.addButton.ForeColor = System.Drawing.Color.Black;
-			this.addButton.Location = new System.Drawing.Point(676, 13);
-			this.addButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
-			this.addButton.Name = "addButton";
-			this.addButton.Size = new System.Drawing.Size(74, 38);
-			this.addButton.TabIndex = 6;
-			this.addButton.Text = "新增";
-			this.addButton.UseVisualStyleBackColor = false;
-			this.addButton.Click += new System.EventHandler(this.addButton_Click);
-			// 
-			// speciesIndexVMBindingSource
-			// 
-			this.speciesIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.SpeciesIndexVM);
-			// 
-			// sampleAreaIndexVMBindingSource
-			// 
-			this.sampleAreaIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.SampleAreaIndexVM);
-			// 
-			// sampleDataIndexVMBindingSource1
-			// 
-			this.sampleDataIndexVMBindingSource1.DataSource = typeof(SalmonStatistics.Model.ViewModel.SampleDataIndexVM);
-			// 
 			// idDataGridViewTextBoxColumn
 			// 
 			this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -153,7 +120,7 @@
 			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
 			this.idDataGridViewTextBoxColumn.ReadOnly = true;
 			this.idDataGridViewTextBoxColumn.Visible = false;
-			this.idDataGridViewTextBoxColumn.Width = 50;
+			this.idDataGridViewTextBoxColumn.Width = 40;
 			// 
 			// SampleArea
 			// 
@@ -245,6 +212,39 @@
 			this.SamplingDate.MinimumWidth = 6;
 			this.SamplingDate.Name = "SamplingDate";
 			this.SamplingDate.ReadOnly = true;
+			// 
+			// sampleDataIndexVMBindingSource
+			// 
+			this.sampleDataIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.SampleDataIndexVM);
+			// 
+			// addButton
+			// 
+			this.addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.addButton.BackColor = System.Drawing.Color.White;
+			this.addButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+			this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.addButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.addButton.ForeColor = System.Drawing.Color.Black;
+			this.addButton.Location = new System.Drawing.Point(676, 13);
+			this.addButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+			this.addButton.Name = "addButton";
+			this.addButton.Size = new System.Drawing.Size(74, 38);
+			this.addButton.TabIndex = 6;
+			this.addButton.Text = "新增";
+			this.addButton.UseVisualStyleBackColor = false;
+			this.addButton.Click += new System.EventHandler(this.addButton_Click);
+			// 
+			// speciesIndexVMBindingSource
+			// 
+			this.speciesIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.SpeciesIndexVM);
+			// 
+			// sampleAreaIndexVMBindingSource
+			// 
+			this.sampleAreaIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.SampleAreaIndexVM);
+			// 
+			// sampleDataIndexVMBindingSource1
+			// 
+			this.sampleDataIndexVMBindingSource1.DataSource = typeof(SalmonStatistics.Model.ViewModel.SampleDataIndexVM);
 			// 
 			// SampleDataForm
 			// 
