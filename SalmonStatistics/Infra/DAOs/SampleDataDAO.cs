@@ -16,9 +16,9 @@ namespace SalmonStatistics.Infra.DAOs
 		{
 			string sql = @"select * 
 							from SampleData d 
-							join SampleArea a on a.Id = d.SampleAreaId
-							join Species s on s.Id = d.SpeciesId
-							join Watershed w on w.Id = a.WatershedId";
+							 join SampleArea a on a.Id = d.SampleAreaId
+							 join Species s on s.Id = d.SpeciesId
+							 join Watershed w on w.Id = a.WatershedId";
 
 			SqlParameter[] parameters = new SqlParameter[] { };
 

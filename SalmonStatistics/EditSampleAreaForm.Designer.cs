@@ -32,7 +32,6 @@
 			this.WatershedIdComboBox = new System.Windows.Forms.ComboBox();
 			this.areaNameTextBox = new System.Windows.Forms.TextBox();
 			this.updateButton = new System.Windows.Forms.Button();
-			this.deleteButton = new System.Windows.Forms.Button();
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
@@ -72,17 +71,6 @@
 			this.updateButton.Text = "保存";
 			this.updateButton.UseVisualStyleBackColor = true;
 			this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
-			// 
-			// deleteButton
-			// 
-			this.deleteButton.Location = new System.Drawing.Point(299, 155);
-			this.deleteButton.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
-			this.deleteButton.Name = "deleteButton";
-			this.deleteButton.Size = new System.Drawing.Size(74, 38);
-			this.deleteButton.TabIndex = 4;
-			this.deleteButton.Text = "刪除";
-			this.deleteButton.UseVisualStyleBackColor = true;
-			this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
 			// 
 			// errorProvider1
 			// 
@@ -164,7 +152,6 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.WatershedIdComboBox);
 			this.Controls.Add(this.areaNameTextBox);
-			this.Controls.Add(this.deleteButton);
 			this.Controls.Add(this.updateButton);
 			this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -187,7 +174,6 @@
 		private System.Windows.Forms.ComboBox WatershedIdComboBox;
 		private System.Windows.Forms.TextBox areaNameTextBox;
 		private System.Windows.Forms.Button updateButton;
-		private System.Windows.Forms.Button deleteButton;
 		private System.Windows.Forms.ErrorProvider errorProvider1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
