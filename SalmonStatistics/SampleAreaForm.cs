@@ -49,7 +49,7 @@ namespace SalmonStatistics
 
 		private void AddButton_Click(object sender, EventArgs e)
 		{
-			var frm = new CreateSampleAreaForm();
+			var frm = new CreateSampleAreaForm(this);
 			DialogResult result = frm.ShowDialog();
 			if (result == DialogResult.OK)
 			{
@@ -81,6 +81,13 @@ namespace SalmonStatistics
 		private void watershedComboBox_SelectionChangeCommitted(object sender, EventArgs e)
 		{
 			DisplaySampleArea();
+		}
+
+		public void Reflash(int id)
+		{
+			sampleArea = new SampleAreaDAO().GetAll(id).Select(dto => dto.ToIndexVM()).ToArray();
+			BindData(sampleArea);
+			watershedComboBox.SelectedIndex = id;
 		}
 	}
 }

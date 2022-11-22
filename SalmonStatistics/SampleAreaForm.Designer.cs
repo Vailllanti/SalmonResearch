@@ -29,21 +29,25 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SampleAreaForm));
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.areaNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.RiverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.sampleAreaIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.AddButton = new System.Windows.Forms.Button();
 			this.watershedComboBox = new System.Windows.Forms.ComboBox();
 			this.watershedIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
+			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.button1 = new System.Windows.Forms.Button();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.areaNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.RiverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.sampleAreaIndexVMBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.watershedIndexVMBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dataGridView1
@@ -55,16 +59,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.dataGridView1.AutoGenerateColumns = false;
 			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkGray;
+			this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
 			this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
             this.areaNameDataGridViewTextBoxColumn,
             this.RiverName});
 			this.dataGridView1.DataSource = this.sampleAreaIndexVMBindingSource;
-			this.dataGridView1.Location = new System.Drawing.Point(18, 60);
+			this.dataGridView1.Location = new System.Drawing.Point(26, 60);
 			this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
@@ -72,49 +75,9 @@
 			this.dataGridView1.RowHeadersWidth = 51;
 			this.dataGridView1.RowTemplate.Height = 27;
 			this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dataGridView1.Size = new System.Drawing.Size(542, 350);
+			this.dataGridView1.Size = new System.Drawing.Size(424, 522);
 			this.dataGridView1.TabIndex = 3;
 			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-			// 
-			// idDataGridViewTextBoxColumn
-			// 
-			this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-			this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-			this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-			this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-			this.idDataGridViewTextBoxColumn.ReadOnly = true;
-			this.idDataGridViewTextBoxColumn.Width = 60;
-			// 
-			// areaNameDataGridViewTextBoxColumn
-			// 
-			this.areaNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.areaNameDataGridViewTextBoxColumn.DataPropertyName = "AreaName";
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGray;
-			this.areaNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-			this.areaNameDataGridViewTextBoxColumn.HeaderText = "樣區名稱";
-			this.areaNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.areaNameDataGridViewTextBoxColumn.Name = "areaNameDataGridViewTextBoxColumn";
-			this.areaNameDataGridViewTextBoxColumn.ReadOnly = true;
-			this.areaNameDataGridViewTextBoxColumn.Width = 121;
-			// 
-			// RiverName
-			// 
-			this.RiverName.DataPropertyName = "RiverName";
-			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-			this.RiverName.DefaultCellStyle = dataGridViewCellStyle3;
-			this.RiverName.HeaderText = "所屬流域";
-			this.RiverName.MinimumWidth = 6;
-			this.RiverName.Name = "RiverName";
-			this.RiverName.ReadOnly = true;
 			// 
 			// sampleAreaIndexVMBindingSource
 			// 
@@ -128,7 +91,7 @@
 			this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.AddButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
 			this.AddButton.ForeColor = System.Drawing.Color.Black;
-			this.AddButton.Location = new System.Drawing.Point(486, 10);
+			this.AddButton.Location = new System.Drawing.Point(376, 14);
 			this.AddButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.AddButton.Name = "AddButton";
 			this.AddButton.Size = new System.Drawing.Size(74, 38);
@@ -142,10 +105,10 @@
 			this.watershedComboBox.DataSource = this.watershedIndexVMBindingSource;
 			this.watershedComboBox.DisplayMember = "RiverName";
 			this.watershedComboBox.FormattingEnabled = true;
-			this.watershedComboBox.Location = new System.Drawing.Point(18, 14);
+			this.watershedComboBox.Location = new System.Drawing.Point(26, 14);
 			this.watershedComboBox.Margin = new System.Windows.Forms.Padding(5);
 			this.watershedComboBox.Name = "watershedComboBox";
-			this.watershedComboBox.Size = new System.Drawing.Size(233, 33);
+			this.watershedComboBox.Size = new System.Drawing.Size(233, 29);
 			this.watershedComboBox.TabIndex = 4;
 			this.watershedComboBox.ValueMember = "Id";
 			this.watershedComboBox.SelectionChangeCommitted += new System.EventHandler(this.watershedComboBox_SelectionChangeCommitted);
@@ -160,18 +123,83 @@
 			this.comboBox2.Location = new System.Drawing.Point(-907, 19);
 			this.comboBox2.Margin = new System.Windows.Forms.Padding(5);
 			this.comboBox2.Name = "comboBox2";
-			this.comboBox2.Size = new System.Drawing.Size(231, 33);
+			this.comboBox2.Size = new System.Drawing.Size(231, 29);
 			this.comboBox2.TabIndex = 4;
+			// 
+			// pictureBox2
+			// 
+			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+			this.pictureBox2.Location = new System.Drawing.Point(467, 320);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(273, 262);
+			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox2.TabIndex = 5;
+			this.pictureBox2.TabStop = false;
+			// 
+			// button1
+			// 
+			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.button1.BackColor = System.Drawing.Color.White;
+			this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.button1.ForeColor = System.Drawing.Color.Black;
+			this.button1.Location = new System.Drawing.Point(368, -234);
+			this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(74, 20);
+			this.button1.TabIndex = 2;
+			this.button1.Text = "新增";
+			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.AddButton_Click);
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(467, 60);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(273, 254);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox1.TabIndex = 5;
+			this.pictureBox1.TabStop = false;
+			// 
+			// areaNameDataGridViewTextBoxColumn
+			// 
+			this.areaNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.areaNameDataGridViewTextBoxColumn.DataPropertyName = "AreaName";
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray;
+			this.areaNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+			this.areaNameDataGridViewTextBoxColumn.HeaderText = "樣區名稱";
+			this.areaNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.areaNameDataGridViewTextBoxColumn.Name = "areaNameDataGridViewTextBoxColumn";
+			this.areaNameDataGridViewTextBoxColumn.ReadOnly = true;
+			this.areaNameDataGridViewTextBoxColumn.Width = 99;
+			// 
+			// RiverName
+			// 
+			this.RiverName.DataPropertyName = "RiverName";
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGray;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+			this.RiverName.DefaultCellStyle = dataGridViewCellStyle2;
+			this.RiverName.HeaderText = "所屬流域";
+			this.RiverName.MinimumWidth = 6;
+			this.RiverName.Name = "RiverName";
+			this.RiverName.ReadOnly = true;
 			// 
 			// SampleAreaForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DarkGray;
-			this.ClientSize = new System.Drawing.Size(578, 430);
+			this.ClientSize = new System.Drawing.Size(770, 602);
+			this.Controls.Add(this.pictureBox1);
+			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.comboBox2);
 			this.Controls.Add(this.watershedComboBox);
 			this.Controls.Add(this.dataGridView1);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.AddButton);
 			this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -181,6 +209,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.sampleAreaIndexVMBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.watershedIndexVMBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -193,7 +223,9 @@
 		private System.Windows.Forms.BindingSource sampleAreaIndexVMBindingSource;
 		private System.Windows.Forms.ComboBox comboBox2;
 		private System.Windows.Forms.BindingSource watershedIndexVMBindingSource;
-		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+		private System.Windows.Forms.PictureBox pictureBox2;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn areaNameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn RiverName;
 	}

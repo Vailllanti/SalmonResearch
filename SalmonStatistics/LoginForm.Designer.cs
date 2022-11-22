@@ -1,6 +1,6 @@
 ﻿namespace SalmonStatistics
 {
-	partial class LoginFrom
+	partial class LoginForm
 	{
 		/// <summary>
 		/// Required designer variable.

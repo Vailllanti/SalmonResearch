@@ -34,12 +34,12 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.AddButton = new System.Windows.Forms.Button();
-			this.usersIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.userVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.accountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.usersIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.AddButton = new System.Windows.Forms.Button();
+			this.userVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.usersIndexVMBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userVMBindingSource)).BeginInit();
@@ -79,33 +79,9 @@
 			this.dataGridView1.RowHeadersWidth = 51;
 			this.dataGridView1.RowTemplate.Height = 27;
 			this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dataGridView1.Size = new System.Drawing.Size(394, 314);
+			this.dataGridView1.Size = new System.Drawing.Size(746, 534);
 			this.dataGridView1.TabIndex = 3;
 			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-			// 
-			// AddButton
-			// 
-			this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.AddButton.BackColor = System.Drawing.Color.White;
-			this.AddButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-			this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.AddButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-			this.AddButton.ForeColor = System.Drawing.Color.Black;
-			this.AddButton.Location = new System.Drawing.Point(332, 12);
-			this.AddButton.Name = "AddButton";
-			this.AddButton.Size = new System.Drawing.Size(74, 38);
-			this.AddButton.TabIndex = 2;
-			this.AddButton.Text = "新增";
-			this.AddButton.UseVisualStyleBackColor = false;
-			this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-			// 
-			// usersIndexVMBindingSource
-			// 
-			this.usersIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.UsersIndexVM);
-			// 
-			// userVMBindingSource
-			// 
-			this.userVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.UserVM);
 			// 
 			// idDataGridViewTextBoxColumn
 			// 
@@ -150,12 +126,36 @@
 			this.nameDataGridViewTextBoxColumn.ReadOnly = true;
 			this.nameDataGridViewTextBoxColumn.Width = 172;
 			// 
+			// usersIndexVMBindingSource
+			// 
+			this.usersIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.UsersIndexVM);
+			// 
+			// AddButton
+			// 
+			this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.AddButton.BackColor = System.Drawing.Color.White;
+			this.AddButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+			this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.AddButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.AddButton.ForeColor = System.Drawing.Color.Black;
+			this.AddButton.Location = new System.Drawing.Point(684, 12);
+			this.AddButton.Name = "AddButton";
+			this.AddButton.Size = new System.Drawing.Size(74, 38);
+			this.AddButton.TabIndex = 2;
+			this.AddButton.Text = "新增";
+			this.AddButton.UseVisualStyleBackColor = false;
+			this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+			// 
+			// userVMBindingSource
+			// 
+			this.userVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.UserVM);
+			// 
 			// UsersForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DarkGray;
-			this.ClientSize = new System.Drawing.Size(418, 382);
+			this.ClientSize = new System.Drawing.Size(770, 602);
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.AddButton);
 			this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));

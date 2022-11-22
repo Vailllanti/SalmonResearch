@@ -58,7 +58,7 @@ namespace SalmonStatistics.Model.DTOs
 				AdultNumber = dto.AdultNumber,
 				SubadultNumber = dto.SubadultNumber,
 				JuvenileNumber = dto.JuvenileNumber,
-				SamplingDate = dto.SamplingDate,
+				SamplingDate = dto.SamplingDate.ToString("yyyy/MM/dd"),
 			};
 		}
 	}

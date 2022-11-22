@@ -114,6 +114,11 @@ namespace SalmonStatistics
 				this.Location = new Point(this.Left + e.X - this.curr_x, this.Top + e.Y - this.curr_y);
 		}
 
+		private void panel1_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
 		private void upPanel_MouseUp(object sender, MouseEventArgs e)
 		{
 			this.isWndMove = false;

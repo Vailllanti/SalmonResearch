@@ -80,7 +80,7 @@ namespace SalmonStatistics
 		public void Reflash(int id)
 		{
 			sampleData = new SampleDataDAO().GetAll(id).Select(dto => dto.ToIndexVM()).ToArray();
-			watershedComboBox.SelectedItem = id;
+			watershedComboBox.SelectedIndex = id;
 			BindData(sampleData);
 		}
 	}

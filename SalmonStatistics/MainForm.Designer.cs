@@ -30,8 +30,6 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.upPanel = new System.Windows.Forms.Panel();
-			this.minButton = new System.Windows.Forms.Button();
-			this.maxButton = new System.Windows.Forms.Button();
 			this.CloseButton = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.watershedButton = new System.Windows.Forms.Button();
@@ -58,8 +56,6 @@
 			// upPanel
 			// 
 			this.upPanel.BackColor = System.Drawing.Color.Gray;
-			this.upPanel.Controls.Add(this.minButton);
-			this.upPanel.Controls.Add(this.maxButton);
 			this.upPanel.Controls.Add(this.CloseButton);
 			this.upPanel.Controls.Add(this.label1);
 			resources.ApplyResources(this.upPanel, "upPanel");
@@ -67,28 +63,6 @@
 			this.upPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.upPanel_MouseDown);
 			this.upPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.upPanel_MouseMove);
 			this.upPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.upPanel_MouseUp);
-			// 
-			// minButton
-			// 
-			resources.ApplyResources(this.minButton, "minButton");
-			this.minButton.BackColor = System.Drawing.Color.Gray;
-			this.minButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-			this.minButton.ForeColor = System.Drawing.Color.Transparent;
-			this.minButton.Name = "minButton";
-			this.minButton.UseVisualStyleBackColor = false;
-			this.minButton.Click += new System.EventHandler(this.minButton_Click);
-			// 
-			// maxButton
-			// 
-			resources.ApplyResources(this.maxButton, "maxButton");
-			this.maxButton.BackColor = System.Drawing.Color.Gray;
-			this.maxButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-			this.maxButton.FlatAppearance.BorderSize = 2;
-			this.maxButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-			this.maxButton.ForeColor = System.Drawing.Color.Transparent;
-			this.maxButton.Name = "maxButton";
-			this.maxButton.UseVisualStyleBackColor = false;
-			this.maxButton.Click += new System.EventHandler(this.maxButton_Click);
 			// 
 			// CloseButton
 			// 
@@ -185,6 +159,7 @@
 			this.panel1.Controls.Add(this.UsersButton);
 			resources.ApplyResources(this.panel1, "panel1");
 			this.panel1.Name = "panel1";
+			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
 			// 
 			// button6
 			// 
@@ -311,8 +286,6 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Panel MainPanel;
-		private System.Windows.Forms.Button minButton;
-		private System.Windows.Forms.Button maxButton;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label welcomeLabel;
 		private System.Windows.Forms.Button button6;

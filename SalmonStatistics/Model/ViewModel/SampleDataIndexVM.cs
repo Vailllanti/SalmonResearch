@@ -28,7 +28,7 @@ namespace SalmonStatistics.Model.ViewModel
 
 		public int JuvenileNumber { get; set; }
 
-		public DateTime SamplingDate { get; set; }
+		public string SamplingDate { get; set; }
 	}
 	public class SampleDataVM
 	{

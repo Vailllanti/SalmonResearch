@@ -36,12 +36,12 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.AddButton = new System.Windows.Forms.Button();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.speciesIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.watershedIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.speciesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ReferencesUrl = new System.Windows.Forms.DataGridViewLinkColumn();
+			this.speciesIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.watershedIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.speciesIndexVMBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.watershedIndexVMBindingSource)).BeginInit();
@@ -55,7 +55,7 @@
 			this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.AddButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
 			this.AddButton.ForeColor = System.Drawing.Color.Black;
-			this.AddButton.Location = new System.Drawing.Point(797, 13);
+			this.AddButton.Location = new System.Drawing.Point(677, 13);
 			this.AddButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.AddButton.Name = "AddButton";
 			this.AddButton.Size = new System.Drawing.Size(74, 38);
@@ -74,7 +74,7 @@
 			this.dataGridView1.AutoGenerateColumns = false;
 			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-			this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkGray;
+			this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
 			this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -106,25 +106,9 @@
 			this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
 			this.dataGridView1.RowTemplate.Height = 27;
 			this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dataGridView1.Size = new System.Drawing.Size(850, 583);
+			this.dataGridView1.Size = new System.Drawing.Size(730, 530);
 			this.dataGridView1.TabIndex = 1;
 			this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-			// 
-			// idDataGridViewTextBoxColumn
-			// 
-			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-			this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-			this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-			this.idDataGridViewTextBoxColumn.Width = 40;
-			// 
-			// speciesIndexVMBindingSource
-			// 
-			this.speciesIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.SpeciesIndexVM);
-			// 
-			// watershedIndexVMBindingSource
-			// 
-			this.watershedIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.WatershedIndexVM);
 			// 
 			// idDataGridViewTextBoxColumn1
 			// 
@@ -170,12 +154,28 @@
 			this.ReferencesUrl.Resizable = System.Windows.Forms.DataGridViewTriState.True;
 			this.ReferencesUrl.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
 			// 
+			// speciesIndexVMBindingSource
+			// 
+			this.speciesIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.SpeciesIndexVM);
+			// 
+			// idDataGridViewTextBoxColumn
+			// 
+			this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+			this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+			this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+			this.idDataGridViewTextBoxColumn.Width = 40;
+			// 
+			// watershedIndexVMBindingSource
+			// 
+			this.watershedIndexVMBindingSource.DataSource = typeof(SalmonStatistics.Model.ViewModel.WatershedIndexVM);
+			// 
 			// SpeciesForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DarkGray;
-			this.ClientSize = new System.Drawing.Size(890, 655);
+			this.ClientSize = new System.Drawing.Size(770, 602);
 			this.Controls.Add(this.AddButton);
 			this.Controls.Add(this.dataGridView1);
 			this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));

@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace SalmonStatistics
 {
-	public partial class LoginFrom : Form
+	public partial class LoginForm : Form
 	{
-		public LoginFrom()
+		public LoginForm()
 		{
 			InitializeComponent();
 		}

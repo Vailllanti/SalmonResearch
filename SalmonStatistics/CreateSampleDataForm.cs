@@ -50,6 +50,8 @@ namespace SalmonStatistics
 				.GetAll(((WatershedVM)watershedComboBox.SelectedItem).Id).
 				Select(dto => dto.ToVM()).ToList();
 			this.areaNameComboBox.DataSource = areaName;
+			int watershedId = ((WatershedVM)watershedComboBox.SelectedItem).Id;
+			sampleDataForm.Reflash(watershedId);
 		}
 
 		private void saveButton_Click(object sender, EventArgs e)

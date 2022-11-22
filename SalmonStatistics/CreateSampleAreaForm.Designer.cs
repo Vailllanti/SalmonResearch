@@ -78,6 +78,7 @@
 			this.WatershedIdComboBox.Size = new System.Drawing.Size(227, 29);
 			this.WatershedIdComboBox.TabIndex = 2;
 			this.WatershedIdComboBox.ValueMember = "Id";
+			this.WatershedIdComboBox.SelectionChangeCommitted += new System.EventHandler(this.WatershedIdComboBox_SelectionChangeCommitted);
 			// 
 			// watershedIndexVMBindingSource
 			// 

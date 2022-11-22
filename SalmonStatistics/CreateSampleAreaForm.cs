@@ -17,10 +17,12 @@ namespace SalmonStatistics
 {
 	public partial class CreateSampleAreaForm : Form
 	{
-		public CreateSampleAreaForm()
+		private SampleAreaForm sampleAreaForm;
+		public CreateSampleAreaForm(SampleAreaForm frm)
 		{
 			InitializeComponent();
 			InitForm();
+			sampleAreaForm = frm;
 		}
 		private void InitForm()
 		{
@@ -33,13 +35,13 @@ namespace SalmonStatistics
 
 		private void saveButton_Click(object sender, EventArgs e)
 		{
-			int WatershedId = ((WatershedVM)WatershedIdComboBox.SelectedItem).Id;
+			int watershedId = ((WatershedVM)WatershedIdComboBox.SelectedItem).Id;
 			string areaName = areaNameTextBox.Text;
 
 			SampleAreaVM model = new SampleAreaVM()
 			{
 				AreaName = areaName,
-				WatershedId = WatershedId
+				WatershedId = watershedId
 			};
 
 			Dictionary<string, Control> map = new Dictionary<string, Control>(StringComparer.CurrentCultureIgnoreCase)
@@ -55,12 +57,14 @@ namespace SalmonStatistics
 			try
 			{
 				new SampleAreaService().Create(dTO);
-				this.DialogResult = DialogResult.OK;
+				//this.DialogResult = DialogResult.OK;
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show("新增失敗，原因: " + ex.Message);
 			}
+			sampleAreaForm.Reflash(watershedId);
+			areaNameTextBox.Clear();
 		}
 
 		private void CloseButton_Click(object sender, EventArgs e)
@@ -86,6 +90,12 @@ namespace SalmonStatistics
 		{
 			if (this.isWndMove)
 				this.Location = new Point(this.Left + e.X - this.curr_x, this.Top + e.Y - this.curr_y);
+		}
+
+		private void WatershedIdComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+		{
+			int watershedId = ((WatershedVM)WatershedIdComboBox.SelectedItem).Id;
+			sampleAreaForm.Reflash(watershedId);
 		}
 
 		private void upPanel_MouseUp(object sender, MouseEventArgs e)
